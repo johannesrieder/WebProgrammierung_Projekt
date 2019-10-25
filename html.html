@@ -2,43 +2,27 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css">
         <title>Ernährungsplan</title>
-        <link rel="stylesheet" href="style.css" />
     </head>
-
-<body>
-    <table class="tableview">
-
-<tr id="tVzeile">
-    <th id="tVspalte">
+<body class="main">
     <div class="eingabe">
             <h1>Eingaben:</h1>
-        <div id="menu">
-                <ul>
-                    <li class="topmenu">
-                        <a href="">Geschlecht</a>
-                <ul>
-                    <li class="submenu"><a href="">Weiblich</a></li>
-                    <li class="submenu"><a href="">Männlich</a></li>
-                </ul>
-                    </li>
-                </ul>
-            <br/>
-            <br/>
-        </div>
-            <h2>Alter <input type="number" name="EringabeAlter" value=""> </h2>
+            <h2>Geschlecht:</h2>
+            <div class="radio">
+            <input name="gender" id="gender-1" type="radio"><label for="gender-1"><span></span>männlich</label>
+            </div>
+            <div class="radio">
+            <input name="gender" id="gender-0"  type="radio"><label for="gender-0"><span></span>weiblich</label>
+            </div>
+            </div>
+            <h2>Alter <input type="number" name="EingabeAlter" value=""> </h2>
             <h2>Größe <input type="number" name="EingabeGröße" value=""></h2>
             <h2>Gewicht <input type="number" name="EingabeGewicht" value=""> </h2>
             <button type="button" name="Berechne Kalorienbedarf"></button>
+        <div class="ergebnis">
+            <h2>Kalorienbedarf:</h2>
+            <h1>4105</h1>
         </div>
-    </th>
-    <th id="tVspalte">
-        <div class="ausgabe">
-            <h2>Test</h2>
         </div>
-    </th>
-</tr>
-
-</table>
-
 </body>

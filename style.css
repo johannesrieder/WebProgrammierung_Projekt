@@ -1,72 +1,25 @@
 CSS
-<style type="text/css">
-    #menu {
-        font-size:14px;
-        position:absolute;
-    }
+html{
+    height: 100%;
+    width:100%;
 
-    #menu ul {
-        list-style-type:none;
-        list-style-image:none;
-        margin:0;
-        padding:0;
-    }
+}
 
-    #menu li.topmenu {
-        float:left;
-    }
+.main{
+    text-align: center;
+    border-color: grey;
+    border-width: 5px;
+    border-style: solid;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-image:url("Main_Background.jpg");
+    background-size: cover;
+}
 
-    .topmenu a {
-        float:left;
-        width:120px;
-        text-align:center;
-    }
+.ergebnis{
+    border: green 3px dashed;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 20px;
 
-    .topmenu ul{
-        display:none;
-    }
-
-    .topmenu a, .submenu a{
-        padding:15px;
-        color:white;
-        font-weight:bold;
-        text-decoration:none;
-        background-color:#985905;
-        margin:0;
-    }
-
-    .submenu a{
-        font-size:12px;
-        width:120px;
-        position:relative;
-        clear:both; /* special IE6 */
-    }
-
-    #menu a:hover, .topmenu.on a {
-        color:white;
-        background-color:#BF7818 !important;
-    }
-
-    .topmenu:hover ul {
-        display:block;
-        z-index:500;
-    }
-    .eingabe{
-        background-color: #0000ff;
-
-    }
-
-    .ausgabe{
-        background-color:#000000;
-    }
-    .tableview{
-        padding-left:10%;
-        padding-right: 10%;
-        padding-top: 5%;
-        padding-bottom: 5%;
-    }
-    #tVspalte {
-        width: 50%;
-    }
-
-</style>
+}
