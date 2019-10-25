@@ -1,0 +1,46 @@
+html {
+  height: 100%;
+}
+
+.main {
+  margin: 0;
+  height: 100%;
+}
+
+
+.table {
+  border-style: none;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+
+}
+
+.tr {
+height: 100%;
+}
+
+.th {
+  margin: 0;
+  padding: 0;
+  width: 33.3%;
+  height: 100%;
+}
+
+.breakfast {
+  height: 100%;
+  background-image: url("breakfast.jpeg");
+  background-size: cover;
+}
+
+.lunch {
+  height: 100%;
+  background-image: url("lunch.jpeg");
+  background-size: cover;
+}
+
+.dinner {
+  height: 100%;
+  background-image: url("dinner.jpg");
+  background-size: cover;
+}
