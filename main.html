@@ -2,12 +2,16 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="main.css">
         <title>Ernährungsplan</title>
     </head>
 <body class="main">
+    <div class="transparent_box">
+        <h2>Blackbox</h2>
     <div class="eingabe">
-            <h1>Eingaben:</h1>
+        <div class="EingabenTitel">
+            <h1>Eingaben</h1>
+        </div>
             <h2>Geschlecht:</h2>
             <div class="radio">
             <input name="gender" id="gender-1" type="radio"><label for="gender-1"><span></span>männlich</label>
@@ -15,14 +19,15 @@
             <div class="radio">
             <input name="gender" id="gender-0"  type="radio"><label for="gender-0"><span></span>weiblich</label>
             </div>
-            </div>
             <h2>Alter <input type="number" name="EingabeAlter" value=""> </h2>
             <h2>Größe <input type="number" name="EingabeGröße" value=""></h2>
             <h2>Gewicht <input type="number" name="EingabeGewicht" value=""> </h2>
-            <button type="button" name="Berechne Kalorienbedarf"></button>
-        <div class="ergebnis">
+            <button type="submit" name="Berechnungsbutton" class="button1">Berechne Kalorienbedarf</button>
+        </div>
+            <div class="ergebnis">
             <h2>Kalorienbedarf:</h2>
             <h1>4105</h1>
         </div>
-        </div>
+    </div>
+    </div>
 </body>
