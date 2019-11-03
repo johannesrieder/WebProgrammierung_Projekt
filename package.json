@@ -1,7 +1,7 @@
 {
-  "name": "Kalorienrechner",
+  "name": "Ernaehrungsplan",
   "version": "1.0.0",
-  "description": "Kalorienrechner",
+  "description": "Ernährungsplan",
   "main": "index.js",
   "scripts": {
     "clean": "node scripts/clean.js",

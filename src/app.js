@@ -3,39 +3,47 @@
 import stylesheet from "./app.css";
 
 import Navigo from "navigo/lib/navigo.js";
-import Main from "./main/main.js";
+import Eingabe from "./eingabe/eingabe.js";
 import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
     /**
      * Hauptklasse der Anwendung. Kümmert sich darum, die Anwendung auszuführen
      * und die angeforderten Bildschirmseiten anzuzeigen.
      */
-    class App {
+	class App {
         /**
          * Konstruktor.
          */
         constructor() {
-            this._title = "My App";
-            this._currentView = null;
+        this._title = "Ernährungsplan";
+        this._currentView = null;
 
-        this._router = new Navigo(null, true);
+        this._router = new Navigo();
         this._currentUrl = "";
+		this._navAborted = false;
+
 
         this._router.on({
-            "detail/display/:id":   params => this.showDetail(params.id, "display"),
-            "detail/new":           () => this.showDetail("", "new"),
-            "overview":            () => this.showOverview(),
-            "*":                    () => this.showOverview(),
+            "/eingabe":            () => this.showEingabe(),
+            "*":                    () => this.showEingabe(),
+            "/nahrungsauswahl":     () => this.showNahrungsauswahl(),
         });
 
         this._router.hooks({
-        after: (params) => {
-                // Navigation durchführen, daher die neue URL merken
-                this._currentUrl = this._router.lastRouteResolved().url;
+         after: (params) => {
+                if (!this._navAborted) {
+                    // Navigation durchführen, daher die neue URL merken
+                    this._currentUrl = this._router.lastRouteResolved().url;
+                } else {
+                    // Navigation abbrechen, daher die URL in der Adresszeile
+                    // auf den alten Wert der bisherigen View zurücksetzen
+                    this._router.pause(true);
+                    this._router.navigate(this._currentUrl);
+                    this._router.pause(false);
+                    this._navAborted = false;
                 }
             }
-        );
-        }
-
+        });
+    }
         /**
          * Ab hier beginnt die Anwendung zu laufen.
          */
@@ -44,14 +52,45 @@ import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
             this._router.resolve();
         }
 
-        _switchVisibleView(view) {
-            // Alles klar, aktuelle View nun wechseln
-            document.title = `${this._title} – ${view.title}`;
+		showEingabe() {
+        let view = new Eingabe(this);
+        this._switchVisibleView(view);
+		}
 
-            this._currentView = view;
-            this._switchVisibleContent(view.onShow());
-            return true;
+		showNahrungsauswahl(){
+        let view = new Nahrungsauswahl;
+        this._switchVisibleView(view);
+		}
+
+       async _switchVisibleView(view) {
+        // Callback, mit dem die noch sichtbare View den Seitenwechsel zu einem
+        // späteren Zeitpunkt fortführen kann, wenn sie in der Methode onLeave()
+        // false zurückliefert. Dadurch erhält sie die Möglichkeit, den Anwender
+        // zum Beispiel zu fragen, ob er ungesicherte Daten speichern will,
+        // bevor er die Seite verlässt.
+        let newUrl = this._router.lastRouteResolved().url;
+        let goon = () => {
+            // ?goon an die URL hängen, weil der Router sonst nicht weiternavigiert
+            this._router.navigate(newUrl + "?goon");
         }
+
+        // Aktuelle View fragen, ob eine neue View aufgerufen werden darf
+        if (this._currentView) {
+            let goonAllowed = await this._currentView.onLeave(goon);
+
+            if (!goonAllowed) {
+                this._navAborted = true;
+                return false;
+            }
+        }
+
+        // Alles klar, aktuelle View nun wechseln
+        document.title = `${this._title} – ${view.title}`;
+
+        this._currentView = view;
+        this._switchVisibleContent(await view.onShow());
+        return true;
+    }
 
     _switchVisibleContent(content) {
         // <header> und <main> des HTML-Grundgerüsts ermitteln
@@ -75,18 +114,11 @@ import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
             content.main.forEach(element => {
                 main.appendChild(element);
             });
-        }
-    }
+		}
+		 // Navigo an die Links in der View binden
+        this._router.updatePageLinks();
 
-    showOverview() {
-        let view = new Overview(this);
-        this._switchVisibleView(view);
     }
-
-    showDetail(id, mode){
-        let view = new Detail(this, id, mode);
-        this._switchVisibleView(view);
-    }
-    }
+	}
 
     export default App;
