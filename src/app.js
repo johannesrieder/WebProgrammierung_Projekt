@@ -3,8 +3,8 @@
 import stylesheet from "./app.css";
 
 import Navigo from "navigo/lib/navigo.js";
-import Overview from "./overview/overview.js";
-import Detail from "./detail/detail.js";
+import Main from "./main/main.js";
+import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
     /**
      * Hauptklasse der Anwendung. Kümmert sich darum, die Anwendung auszuführen
      * und die angeforderten Bildschirmseiten anzuzeigen.
