@@ -3,7 +3,11 @@
 import stylesheet from "./app.css";
 
 import Navigo from "navigo/lib/navigo.js";
+<<<<<<< HEAD
 import Eingabe from "index.js";
+=======
+import Eingabe from "./index.js";
+>>>>>>> 68fc234d38555b929a732f5b654431614b5c948f
 import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
     /**
      * Hauptklasse der Anwendung. Kümmert sich darum, die Anwendung auszuführen
