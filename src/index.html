@@ -2,86 +2,33 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="index.css">
+        <script src="./index.js"></script>
         <title>Ernährungsplan</title>
-
-        <script src="index.js"></script>
-
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"
-        >
-
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"
-        >
-            JQUERY
-        </script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"
-        >
-            POPPER
-        </script>
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"
-        >
-            BOOTSRAP
-        </script>
     </head>
-    <body>
-        <section id="app">
-    <!-- Topbar -->
-    <header>
-        <!-- Obere Zeile (fester Inhalt) -->
-        <div class="top left">
-            <div class="item inactive">
-                <b>
-                    Beispiel einer Browser App: Ernährungsplan
-                </b>
-            </div>
+<body class="main">
+    <div class="transparent_box">
+        <h2>Blackbox</h2>
+    <div class="eingabe">
+        <div class="EingabenTitel">
+            <h1>Eingaben</h1>
         </div>
-        <div class="top right">
-            <div class="item">
-                <a href="/eingaben" target="_blank">Eingaben</a>
+            <h2>Geschlecht:</h2>
+            <div class="radio">
+            <input name="gender" id="gender-1" type="radio"><label for="gender-1"><span></span>männlich</label>
             </div>
-            <div class="item">
-                <a href="/nahrungsauswahl" target="_blank">Nahrungsauswahl</a>
+            <div class="radio">
+            <input name="gender" id="gender-0"  type="radio"><label for="gender-0"><span></span>weiblich</label>
             </div>
+            <h2>Alter <input type="number" name="EingabeAlter" value=""> </h2>
+            <h2>Größe <input type="number" name="EingabeGröße" value=""></h2>
+            <h2>Gewicht <input type="number" name="EingabeGewicht" value=""> </h2>
+            <button type="submit" id="Berechnungsbutton" class="button1">Berechne Kalorienbedarf</button>
         </div>
-
-        <!-- Untere Zeile (dynamisch je nach View) -->
-        <div class="bottom left">
-            <div class="item">
-                Eingaben
-            </div>
-            <div class="item">
-                Sortierung nach Titel
-            </div>
+            <div class="ergebnis">
+            <h2>Kalorienbedarf:</h2>
+            <h1>4105</h1>
         </div>
-        <div class="bottom right">
-            <input placeholder="Suchen" />
-        </div>
-    </header>
-
-    <!-- Hauptbereich (dynamisch je nach View) -->
-    <main>
-        <div class="padding">
-            Under Construction
-        </div>
-    </main>
-</section>
-
-        <section id="eingabe" class="hidden">
-            <main>
-                <h1>Eingaben</h1>
-            </main>
-        </section>
-    </body>
-</html>
+    </div>
+    </div>
+</body>
