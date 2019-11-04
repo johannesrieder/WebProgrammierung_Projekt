@@ -24,7 +24,7 @@
             let section = document.querySelector("#nahrungsauswahl").cloneNode(true);
 
 			return {
-				className: "nahrungsauswahl",
+				className: "Nahrungsauswahl",
 				topbar: section.querySelectorAll("header > *"),
 				main: section.querySelectorAll("main > *"),
 			};
@@ -47,7 +47,7 @@
          * @return {String} Titel für die Titelzeile des Browsers
          */
         get title() {
-            return "Nahrungsauswahl";
+            return "nahrungsauswahl";
         }
     }
 

@@ -1,12 +1,11 @@
 "use strict";
 
 import stylesheet from "./app.css";
-
 import Navigo from "navigo/lib/navigo.js";
-
-import Eingabe from "index.js";
-
+import Eingabe from "./eingabe/eingabe.js";
 import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
+import eingabeFormular from "./eingabe/eingabeFormular.html";
+
     /**
      * Hauptklasse der Anwendung. Kümmert sich darum, die Anwendung auszuführen
      * und die angeforderten Bildschirmseiten anzuzeigen.
@@ -19,13 +18,16 @@ import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
         this._title = "Ernährungsplan";
         this._currentView = null;
 
-        this._router = new Navigo();
+        this._router = new Navigo(null, true);
         this._currentUrl = "";
 		this._navAborted = false;
 
 
         this._router.on({
-            "/nahrungsauswahl":     () => this.showNahrungsauswahl(),
+            "section" : () => this.showAwesomeSection(),
+            "eingabe":     () => this.showEingabe(),
+            "nahrungsauswahl":     () => this.showNahrungsauswahl(),
+            "*":     () => this.showAwesomeSection(),
         });
 
         this._router.hooks({
@@ -58,9 +60,19 @@ import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
 		}
 
 		showNahrungsauswahl(){
-        let view = new Nahrungsauswahl;
+            console.log("Test");
+        let view = new Nahrungsauswahl(this);
+        console.log(view);
         this._switchVisibleView(view);
 		}
+
+        showAwesomeSection() {
+            let newDiv = document.createElement("div");
+            newDiv.innerHTML = eingabeFormular.trim();
+            document.getElementById("content").appendChild(newDiv);
+
+
+        }
 
        async _switchVisibleView(view) {
         // Callback, mit dem die noch sichtbare View den Seitenwechsel zu einem
@@ -71,6 +83,7 @@ import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
         let newUrl = this._router.lastRouteResolved().url;
         let goon = () => {
             // ?goon an die URL hängen, weil der Router sonst nicht weiternavigiert
+            console.log("goon")
             this._router.navigate(newUrl + "?goon");
         }
 
