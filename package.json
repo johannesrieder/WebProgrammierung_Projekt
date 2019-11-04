@@ -1,5 +1,5 @@
 {
-  "name": "Ernaehrungsplan",
+  "name": "ernaehrungsplan",
   "version": "1.0.0",
   "description": "Ernährungsplan",
   "main": "index.js",
@@ -23,5 +23,6 @@
     "navigo": "^7.1.2",
     "parcel-bundler": "^1.12.4",
     "shelljs": "^0.8.3"
-  }
+  },
+  "dependencies": {}
 }
