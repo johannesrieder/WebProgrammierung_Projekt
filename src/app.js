@@ -25,8 +25,6 @@ import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
 
 
         this._router.on({
-            "/eingabe":            () => this.showEingabe(),
-            "*":                    () => this.showEingabe(),
             "/nahrungsauswahl":     () => this.showNahrungsauswahl(),
         });
 
