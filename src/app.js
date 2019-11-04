@@ -120,5 +120,4 @@ import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
 
     }
 	}
-
     export default App;

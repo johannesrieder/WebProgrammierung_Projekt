@@ -81,7 +81,7 @@
      * Temporärer Inhalt, solange es noch keinen richtigen Inhalt gibt
      * Bild: https://pixabay.com/de/handwerker-baustelle-arbeiter-3094035/
      */
-    background-image: url(Main_Background.jpg);
+    background-image: url(index_background.jpg);
     background-size: 100% auto;
     background-position: bottom center;
     background-repeat: no-repeat;
