@@ -1,6 +1,81 @@
+<<<<<<< HEAD
 CSS
 html, body {
     padding: 0;
     margin: 0;
     height: 100%;
+=======
+
+html{
+  height: 100%;
+}
+
+.main{
+  background-image:url("index_background.jpg");
+  background-size: cover;
+  color: white;
+}
+
+h1{
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-bottom: 5%;
+  font-size: 60px;
+}
+
+h2{
+  padding-left: 10%;
+  padding-bottom: 5%;
+  font-size: 30px;
+}
+
+.transparent_box {
+  height: 90%;
+  width: 50%;
+  background-color: black;
+  opacity: 80%;
+  border-radius: 25px;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.table_eingabe{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  width: 70%;
+}
+
+tr{
+}
+
+th{
+  text-align: left;
+}
+
+
+
+.button1{
+    height: 50px;
+    width: 300px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: green;
+    border: none;
+    margin-bottom: 20px;
+    opacity: 100%;
+    border-radius: 25px;
+    cursor: pointer;
+
+}
+
+.button1:hover{
+    background-color: #003300;
+}
+
+.button1:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+>>>>>>> df7fd8444b0076536ad8b9f079d827c75a2bb255
 }
