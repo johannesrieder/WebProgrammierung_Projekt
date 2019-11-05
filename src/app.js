@@ -28,6 +28,7 @@ import verlaufformular from "./verlauf/verlaufformular.html";
         this._router.on({
             "eingabe" : () => this.showEingabe(),
             "nahrungsauswahl":     () => this.showNahrungsauswahl(),
+            "verlauf": () => this.showVerlauf(),
         });
 
         this._router.hooks({
@@ -66,8 +67,13 @@ import verlaufformular from "./verlauf/verlaufformular.html";
             let newDiv = document.createElement("div");
             newDiv.innerHTML = eingabeFormular.trim();
             document.getElementById("content").appendChild(newDiv);
+        }
 
-
+        showVerlauf(){
+            document.getElementById("content").innerHTML = "";
+            let newDiv = document.createElement("div");
+            newDiv.innerHTML = verlaufformular.trim();
+            document.getElementById("content").appendChild(newDiv);
         }
 
        async _switchVisibleView(view) {
