@@ -1,7 +1,6 @@
 "use strict";
 
 import stylesheet from "./index.css";
-import theme from "./theme.css";
 
 import App from "./app.js";
 

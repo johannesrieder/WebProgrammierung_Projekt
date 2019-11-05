@@ -4,8 +4,10 @@ import stylesheet from "./app.css";
 import Navigo from "navigo/lib/navigo.js";
 import Eingabe from "./eingabe/eingabe.js";
 import Nahrungsauswahl from "./nahrungsauswahl/nahrungsauswahl.js";
+import Verlauf from "./verlauf/verlauf.js";
 import eingabeFormular from "./eingabe/eingabeFormular.html";
-
+import nahrungsauswahlformular from "./nahrungsauswahl/nahrungsauswahlformular.html";
+import verlaufformular from "./verlauf/verlaufformular.html";
     /**
      * Hauptklasse der Anwendung. Kümmert sich darum, die Anwendung auszuführen
      * und die angeforderten Bildschirmseiten anzuzeigen.
@@ -24,10 +26,8 @@ import eingabeFormular from "./eingabe/eingabeFormular.html";
 
 
         this._router.on({
-            "section" : () => this.showAwesomeSection(),
-            "eingabe":     () => this.showEingabe(),
+            "eingabe" : () => this.showEingabe(),
             "nahrungsauswahl":     () => this.showNahrungsauswahl(),
-            "*":     () => this.showAwesomeSection(),
         });
 
         this._router.hooks({
@@ -54,19 +54,15 @@ import eingabeFormular from "./eingabe/eingabeFormular.html";
             this._router.resolve();
         }
 
-		showEingabe() {
-        let view = new Eingabe(this);
-        this._switchVisibleView(view);
-		}
-
 		showNahrungsauswahl(){
-            console.log("Test");
-        let view = new Nahrungsauswahl(this);
-        console.log(view);
-        this._switchVisibleView(view);
+            document.getElementById("content").innerHTML = "";
+            let newDiv = document.createElement("div");
+            newDiv.innerHTML = nahrungsauswahlformular.trim();
+            document.getElementById("content").appendChild(newDiv);
 		}
 
-        showAwesomeSection() {
+        showEingabe() {
+            document.getElementById("content").innerHTML = "";
             let newDiv = document.createElement("div");
             newDiv.innerHTML = eingabeFormular.trim();
             document.getElementById("content").appendChild(newDiv);
