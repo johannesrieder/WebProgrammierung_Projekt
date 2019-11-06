@@ -67,6 +67,7 @@ import verlaufformular from "./verlauf/verlaufformular.html";
             let newDiv = document.createElement("div");
             newDiv.innerHTML = eingabeFormular.trim();
             document.getElementById("content").appendChild(newDiv);
+            new Eingabe();
         }
 
         showVerlauf(){

@@ -1,55 +1,52 @@
 "use strict";
 
-    import stylesheet from "./eingabe.css";
+import stylesheet from "./eingabe.css";
 
-    class Eingabe {
-        /**
-         * Konstruktor.
-         * @param {Objekt} app Zentrales App-Objekt der Anwendung
-         */
-        constructor(app) {
-            this._app = app;
+class Eingabe {
+    /**
+     * Konstruktor.
+     * @param {Objekt} app Zentrales App-Objekt der Anwendung
+     */
+    constructor(app) {
+        this._app = app;
+        console.log("Test123");
+        let Geschlecht = getElementByID("Geschlecht").value;
+        let EingabeAlter = getElementByID("EingabeAlter");
+        let EingabeGröße = getElementByID("EingabeGröße");
+        let EingabeGewicht = getElementByID("EingabeGewicht");
+        let Aktivitätslevel = getElementByID("Aktivitätslevel").value;
+
+        document.getElementById("Berechnungsbutton").addEventListener(click,click);
+    }
+//https: //www.marathonfitness.de/kalorienbedarf-berechnen/
+
+    kalorienbedarfGeschlecht() {
+        if (Geschlecht == männlich) {
+            let Kalorienanzahl = (10* Eingabegewicht.innerHTML) + (6, 25* EingabeGröße.innerHTML)-(5* EingabeAlter.InnerHTML) + 5;
         }
 
-        /**
-         * Von der Klasse App aufgerufene Methode, um die Seite anzuzeigen. Die
-         * Methode gibt daher ein passendes Objekt zurück, das an die Methode
-         * _switchVisibleContent() der Klasse App übergeben werden kann, um ihr
-         * die darzustellenden DOM-Elemente mitzuteilen.
-         *
-         * @return {Object} Darzustellende DOM-Elemente gemäß Beschreibung der
-         * Methode App._switchVisibleContent()
-         */
-        onShow() {
-            let section = document.querySelector("#eingabe").cloneNode(true);
-
-			return {
-				className: "eingabe",
-				topbar: section.querySelectorAll("header > *"),
-				main: section.querySelectorAll("main > *"),
-			};
-
-		}
-
-        /**
-         * Von der Klasse App aufgerufene Methode, um festzustellen, ob der Wechsel
-         * auf eine neue Seite erlaubt ist. Wird hier true zurückgegeben, wird der
-         * Seitenwechsel ausgeführt.
-         *
-         * @param  {Function} goon Callback, um den Seitenwechsel zu einem späteren
-         * Zeitpunkt fortzuführen, falls wir hier false zurückgeben
-         * @return {Boolean} true, wenn der Seitenwechsel erlaubt ist, sonst false
-         */
-        onLeave(goon) {
-            return true;
+        if (Geschlecht == weiblich) {
+            let Kalorienanzahl = 2;
         }
-
-        /**
-         * @return {String} Titel für die Titelzeile des Browsers
-         */
-        get title() {
-            return "eingabe";
-        }
+        return Kalorienanzahl;
     }
 
-    export default Eingabe;
+    kalorienbedarfAktivität(Kalorienanzahl) {
+        if (Aktivitätslevel == leicht) {
+            Kalorienanzahl *= 1,375;
+        }
+        if (Aktivitätslevel == moderat) {
+            Kalorienanzahl *= 1,55;
+        }
+        if (Aktivitätslevel == sehrAktiv) {
+            Kalorienanzahl *= 1,725;
+        }
+        return Kalorienanzahl
+    }
+    click(){
+        console.log("funktioniert");
+    }
+}
+
+
+export default Eingabe;
