@@ -9,44 +9,43 @@ class Eingabe {
      */
     constructor(app) {
         this._app = app;
-        console.log("Test123");
-        let Geschlecht = getElementByID("Geschlecht").value;
-        let EingabeAlter = getElementByID("EingabeAlter");
-        let EingabeGröße = getElementByID("EingabeGröße");
-        let EingabeGewicht = getElementByID("EingabeGewicht");
-        let Aktivitätslevel = getElementByID("Aktivitätslevel").value;
 
-        document.getElementById("Berechnungsbutton").addEventListener(click,click);
+        let Geschlecht = document.querySelector('input[name = "Geschlecht"]:checked').value;
+        console.log(Geschlecht);
+        let EingabeAlter = document.getElementById("EingabeAlter");
+        let EingabeGröße = document.getElementById("EingabeGröße");
+        let EingabeGewicht = document.getElementById("EingabeGewicht");
+        let Aktivitätslevel = document.querySelector('input[name = "Geschlecht"]:checked').value;
+        console.log(Aktivitätslevel);
+
+        let kvv = document.getElementById("Berechnungsbutton").addEventListener("click", this.kalorienbedarfGeschlecht);
+        console.log(kvv);
+
     }
-//https: //www.marathonfitness.de/kalorienbedarf-berechnen/
+    //https: //www.marathonfitness.de/kalorienbedarf-berechnen/
 
     kalorienbedarfGeschlecht() {
-        if (Geschlecht == männlich) {
-            let Kalorienanzahl = (10* Eingabegewicht.innerHTML) + (6, 25* EingabeGröße.innerHTML)-(5* EingabeAlter.InnerHTML) + 5;
+        if (Geschlecht == "männlich") {
+            let Kalorienanzahl = (10 * Eingabegewicht) + (6, 25 * EingabeGröße) - (5 * EingabeAlter) + 5;
         }
 
-        if (Geschlecht == weiblich) {
+        if (Geschlecht == "weiblich") {
             let Kalorienanzahl = 2;
         }
         return Kalorienanzahl;
     }
 
     kalorienbedarfAktivität(Kalorienanzahl) {
-        if (Aktivitätslevel == leicht) {
-            Kalorienanzahl *= 1,375;
+        if (Aktivitätslevel == "leicht") {
+            Kalorienanzahl *= 1, 375;
         }
-        if (Aktivitätslevel == moderat) {
-            Kalorienanzahl *= 1,55;
+        if (Aktivitätslevel == "moderat") {
+            Kalorienanzahl *= 1, 55;
         }
-        if (Aktivitätslevel == sehrAktiv) {
-            Kalorienanzahl *= 1,725;
+        if (Aktivitätslevel == "sehrAktiv") {
+            Kalorienanzahl *= 1, 725;
         }
-        return Kalorienanzahl
-    }
-    click(){
-        console.log("funktioniert");
+        return Kalorienanzahl;
     }
 }
-
-
 export default Eingabe;
