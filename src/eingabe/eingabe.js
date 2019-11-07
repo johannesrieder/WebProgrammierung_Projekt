@@ -9,43 +9,55 @@ class Eingabe {
      */
     constructor(app) {
         this._app = app;
-
-        let Geschlecht = document.querySelector('input[name = "Geschlecht"]:checked').value;
-        console.log(Geschlecht);
-        let EingabeAlter = document.getElementById("EingabeAlter");
-        let EingabeGröße = document.getElementById("EingabeGröße");
-        let EingabeGewicht = document.getElementById("EingabeGewicht");
-        let Aktivitätslevel = document.querySelector('input[name = "Geschlecht"]:checked').value;
-        console.log(Aktivitätslevel);
-
-        let kvv = document.getElementById("Berechnungsbutton").addEventListener("click", this.kalorienbedarfGeschlecht);
-        console.log(kvv);
-
+        document.getElementById("Berechnungsbutton").addEventListener("click", this.kalorienbedarfGeschlecht);
+        document.getElementById("ResetButton").addEventListener("click", this.resetEingaben);
     }
-    //https: //www.marathonfitness.de/kalorienbedarf-berechnen/
+    //https://www.marathonfitness.de/kalorienbedarf-berechnen/
+    // Die Mifflin-St.Jeor Formel
 
     kalorienbedarfGeschlecht() {
-        if (Geschlecht == "männlich") {
-            let Kalorienanzahl = (10 * Eingabegewicht) + (6, 25 * EingabeGröße) - (5 * EingabeAlter) + 5;
-        }
+        var EingabeAlter = document.getElementById("EingabeAlter").value;
+        var EingabeGröße = document.getElementById("EingabeGröße").value;
+        var EingabeGewicht = document.getElementById("EingabeGewicht").value;
 
-        if (Geschlecht == "weiblich") {
-            let Kalorienanzahl = 2;
+        if (EingabeAlter != "" && EingabeGröße != "" && EingabeGewicht != "") { //überprüft Eingaben auf Vollständigkeit
+            if (document.getElementById("männlich").checked) {
+                var Kalorienanzahl = (10 * EingabeGewicht) + (6, 25 * EingabeGröße) - (5 * EingabeAlter) + 5;
+                this.kalorienbedarfAktivität(Kalorienanzahl);
+            }
+
+            if (document.getElementById("weiblich").checked) {
+                var Kalorienanzahl = (10 * EingabeGewicht) + (6, 25 * EingabeGröße) - (5 * EingabeAlter) - 161;
+                this.kalorienbedarfAktivität(Kalorienanzahl);
+            }
         }
-        return Kalorienanzahl;
+        else {
+            alert("Eingaben unvollständig!");
+        }
     }
 
     kalorienbedarfAktivität(Kalorienanzahl) {
-        if (Aktivitätslevel == "leicht") {
+        console.log("Methode aufgerufen");
+        if (document.getElementById("Aktivitätslevel").value == "leicht") {
             Kalorienanzahl *= 1, 375;
         }
-        if (Aktivitätslevel == "moderat") {
+        if (document.getElementById("Aktivitätslevel").value == "moderat") {
             Kalorienanzahl *= 1, 55;
         }
-        if (Aktivitätslevel == "sehrAktiv") {
+        if (document.getElementById("Aktivitätslevel").value == "sehrAktiv") {
             Kalorienanzahl *= 1, 725;
         }
-        return Kalorienanzahl;
+        setErgebnis(Kalorienanzahl);
+    }
+
+    setErgebnis(Kalorienanzahl) {
+        document.getElementById("KalorienbedarfErgebnis").value = Kalorienanzahl;
+    }
+
+    resetEingaben() {
+        document.getElementById("EingabeAlter").value = "";
+        document.getElementById("EingabeGröße").value = "";
+        document.getElementById("EingabeGewicht").value = "";
     }
 }
 export default Eingabe;
