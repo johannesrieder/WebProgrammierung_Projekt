@@ -29,6 +29,7 @@ import verlaufformular from "./verlauf/verlaufformular.html";
             "eingabe" : () => this.showEingabe(),
             "nahrungsauswahl":     () => this.showNahrungsauswahl(),
             "verlauf": () => this.showVerlauf(),
+            "*": () => this.showEingabe(),
         });
 
         this._router.hooks({
