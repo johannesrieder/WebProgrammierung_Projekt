@@ -2,6 +2,7 @@ section {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  height: 92.5%;
 }
 
 #sec_1 {
@@ -45,7 +46,6 @@ section {
   opacity: 80%;
   border-radius: 25px;
   color: white;
-
 }
 
 #eingabe_transparentBox {
@@ -66,6 +66,8 @@ section {
   padding-bottom: 2.5%;
   padding-left: 5%;
   padding-right: 5%;
+  font-family: 'Amatic SC', cursive;
+  font-size: 40pt;
 }
 
 #eingabe_table {
@@ -73,26 +75,11 @@ section {
   margin-right: 10%;
 }
 
-#eingabe_table_td {
-  padding-right: 40%;
-}
-
 #eingabe_untertitel {
   color: white;
   padding-left: 10%;
-}
-
-#eingabe_kalorienbedarf {
-  padding-top: 5%;
-  padding-bottom: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-#eingabe_ergebnisKB {
-  margin: 5%;
-  font-size: 100px;
-  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25pt;
 }
 
 #eingabe_bottomButtons {
@@ -102,18 +89,19 @@ section {
 }
 
 .button{
-    margin-left: 1.5%;
-    margin-right: 1.5%;
-    height: 50px;
-    width: 300px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    background-color: green;
-    border: none;
-    opacity: 100%;
-    border-radius: 25px;
-    cursor: pointer;
+  width: 40%;
+  padding-top: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 1%;
+  color: white;
+  font-family: 'Amatic SC', sans-serif;
+  color: white;
+  font-size: 20pt;
+  background-color: green;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
 .button:hover{
@@ -127,4 +115,20 @@ section {
 
 .hidden{
     display: none;
+}
+
+#eingabe_kalorienbedarf {
+  padding-top: 5%;
+  padding-bottom: 2.5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-family: 'Amatic SC', cursive;
+  font-size: 40pt;
+}
+
+#eingabe_ergebnisKB {
+  margin: 5%;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 100px;
 }

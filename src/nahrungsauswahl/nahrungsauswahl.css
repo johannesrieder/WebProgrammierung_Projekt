@@ -1,24 +1,32 @@
 section {
   margin: 0;
   padding: 0;
-  height: 92.5%;
-  width: 100%;
   overflow: hidden;
+  height: 92.5%;
 }
 
-.table {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+#sec_2 {
   height: 100%;
-  border-collapse: collapse;
 }
 
-.th {
-  margin: 0;
+.column {
   padding: 0;
-  width: 33.3%;
-  background-size: cover;
+  width: 33.33%;
+  float: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.left, .column.right {
+    width: 100%;
+  }
 }
 
 h1 {
@@ -77,6 +85,7 @@ h1 {
   background-color: #3742fa;
   border-style: none;
   border-radius: 25px;
+  cursor: pointer;
 }
 
 #bZeigeKalorien {
@@ -93,4 +102,5 @@ h1 {
   background-color: #44bd32;
   border-style: none;
   border-radius: 25px;
+  cursor: pointer;
 }
