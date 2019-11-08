@@ -9,8 +9,8 @@ class Eingabe {
      */
     constructor(app) {
         this._app = app;
-        document.getElementById("Berechnungsbutton").addEventListener("click", this.kalorienbedarfGeschlecht);
-        document.getElementById("ResetButton").addEventListener("click", this.resetEingaben);
+        document.getElementById("bBerechnung").addEventListener("click", this.kalorienbedarfGeschlecht);
+        document.getElementById("bReset").addEventListener("click", this.resetEingaben);
     }
     //https://www.marathonfitness.de/kalorienbedarf-berechnen/
     // Die Mifflin-St.Jeor Formel
