@@ -1,15 +1,14 @@
-
-html {
-  height: 100%;
-}
-
-.main {
+section {
   margin: 0;
-  height: 100%;
+  padding: 0;
+  height: 92.5%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .table {
-  border-style: none;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   border-collapse: collapse;
@@ -19,34 +18,44 @@ html {
   margin: 0;
   padding: 0;
   width: 33.3%;
-  height: 100%;
+  background-size: cover;
 }
 
-.breakfast {
+h1 {
+  margin: 0;
+  padding-top: 15%;
+  padding-left: 10%;
+  text-align: left;
+  color: white;
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 40pt;
+}
+
+.transparentBox {
+  background-color: black;
+  opacity: 80%;
+  border-radius: 25px;
+  color: white;
+  margin: 10%;
+  height: 50%;
+}
+
+#breakfast {
   height: 100%;
   background-image: url("breakfast.jpeg");
   background-size: cover;
 }
 
-.lunch {
+#lunch {
   height: 100%;
   background-image: url("lunch.jpeg");
   background-size: cover;
 }
 
-.dinner {
+#dinner {
   height: 100%;
   background-image: url("dinner.jpg");
   background-size: cover;
-}
-
-.transparent_box {
-  margin: 10%;
-  height: 50%;
-  background-color: black;
-  opacity: 80%;
-  border-radius: 25px;
-
 }
 
 .bottomButtons {
@@ -84,14 +93,4 @@ html {
   background-color: #44bd32;
   border-style: none;
   border-radius: 25px;
-}
-
-h1 {
-  margin: 0;
-  padding-top: 15%;
-  padding-left: 10%;
-  text-align: left;
-  color: white;
-  font-family: 'Amatic SC', sans-serif;
-  font-size: 60pt;
 }
