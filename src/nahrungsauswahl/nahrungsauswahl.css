@@ -66,6 +66,42 @@ h1 {
   background-size: cover;
 }
 
+.grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: auto auto;
+  padding: 5%;
+  grid-gap: 5%;
+}
+
+.bGericht {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  border-style: none;
+}
+
+#breakfast_g1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#breakfast_g2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#breakfast_g3 {
+  grid-column-start: 2;
+  grid-column-end: 1;
+}
+
+#breakfast_g4 {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
 .bottomButtons {
   width: 100%;
   bottom: 5%;
