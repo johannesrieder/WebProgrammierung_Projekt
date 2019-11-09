@@ -75,6 +75,7 @@ import verlaufformular from "./verlauf/verlaufformular.html";
             let newDiv = document.createElement("div");
             newDiv.innerHTML = verlaufformular.trim();
             document.getElementById("content").appendChild(newDiv);
+						new Verlauf();
         }
 
        async _switchVisibleView(view) {

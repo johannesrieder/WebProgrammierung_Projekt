@@ -9,7 +9,17 @@
          */
         constructor(app) {
             this._app = app;
+
+            console.log(0);
+            document.getElementById("volume").addEventListener("input", this.ausgeben);
+
         }
+        ausgeben(ev) {
+          console.log(3);
+            document.getElementById("output").value =ev.target.value;
+            //document.getElementById("output").innerHTML =ev;
+        }
+
 
         /**
          * Von der Klasse App aufgerufene Methode, um die Seite anzuzeigen. Die
