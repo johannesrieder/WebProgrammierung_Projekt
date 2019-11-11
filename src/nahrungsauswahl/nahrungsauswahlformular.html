@@ -1,74 +1,91 @@
 <section id="sec_2">
-  <link rel="stylesheet" href="nahrungsauswahl.css">
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="nahrungsauswahl.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <body class="main">
-      <div class="column">
-        <div id="breakfast">
-          <h1><b>FRÜHSTÜCK</b></h1>
-          <div class="transparentBox">
-            <div class="grid">
-              <div class="div_breakfast_g1">
-                <button id="breakfast_g1" class="bGericht" type="submit" name="action" >Gericht 1</button>
-              </div>
-              <div class="div_breakfast_g1">
-                <button id="breakfast_g2" class="bGericht" type="submit" name="action" >Gericht 2</button>
-              </div>
-              <div class="div_breakfast_g1">
-                <button id="breakfast_g3" class="bGericht" type="submit" name="action" >Gericht 3</button>
-              </div>
-              <div class="div_breakfast_g1">
-                <button id="breakfast_g4" class="bGericht" type="submit" name="action" >Gericht 4</button>
-              </div>
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <div class="column">
+                        <div id="breakfast">
+                            <h1><b>FRÜHSTÜCK</b></h1>
+                            <div class="transparentBox">
+                                <div class="grid">
+                                    <div class="div_breakfast_g1">
+                                        <button id="breakfast_g1" class="bGericht" type="submit" name="action">Gericht 1</button>
+                                    </div>
+                                    <div class="div_breakfast_g1">
+                                        <button id="breakfast_g2" class="bGericht" type="submit" name="action">Gericht 2</button>
+                                    </div>
+                                    <div class="div_breakfast_g1">
+                                        <button id="breakfast_g3" class="bGericht" type="submit" name="action">Gericht 3</button>
+                                    </div>
+                                    <div class="div_breakfast_g1">
+                                        <button id="breakfast_g4" class="bGericht" type="submit" name="action">Gericht 4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="column">
+                        <div id="lunch">
+                            <h1><b>MITTAGESSEN</b></h1>
+                            <div class="transparentBox">
+                                <div class="grid">
+                                    <div class="div_lunch_g1">
+                                        <button id="lunch_g1" class="bGericht" type="submit" name="action">Gericht 1</button>
+                                    </div>
+                                    <div class="div_lunch_g1">
+                                        <button id="lunch_g2" class="bGericht" type="submit" name="action">Gericht 2</button>
+                                    </div>
+                                    <div class="div_lunch_g1">
+                                        <button id="lunch_g3" class="bGericht" type="submit" name="action">Gericht 3</button>
+                                    </div>
+                                    <div class="div_lunch_g1">
+                                        <button id="lunch_g4" class="bGericht" type="submit" name="action">Gericht 4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="column">
+                        <div id="dinner">
+                            <h1><b>ABENDESSEN</b></h1>
+                            <div class="transparentBox">
+                                <div class="grid">
+                                    <div class="div_dinner_g1">
+                                        <button id="dinner_g1" class="bGericht" type="submit" name="action">Gericht 1</button>
+                                    </div>
+                                    <div class="div_dinner_g1">
+                                        <button id="dinner_g2" class="bGericht" type="submit" name="action">Gericht 2</button>
+                                    </div>
+                                    <div class="div_dinner_g1">
+                                        <button id="dinner_g3" class="bGericht" type="submit" name="action">Gericht 3</button>
+                                    </div>
+                                    <div class="div_dinner_g1">
+                                        <button id="dinner_g4" class="bGericht" type="submit" name="action">Gericht 4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="column">
-        <div id="lunch">
-          <h1><b>MITTAGESSEN</b></h1>
-          <div class="transparentBox">
-            <div class="grid">
-              <div class="div_lunch_g1">
-                <button id="lunch_g1" class="bGericht" type="submit" name="action" >Gericht 1</button>
-              </div>
-              <div class="div_lunch_g1">
-                <button id="lunch_g2" class="bGericht" type="submit" name="action" >Gericht 2</button>
-              </div>
-              <div class="div_lunch_g1">
-                <button id="lunch_g3" class="bGericht" type="submit" name="action" >Gericht 3</button>
-              </div>
-              <div class="div_lunch_g1">
-                <button id="lunch_g4" class="bGericht" type="submit" name="action" >Gericht 4</button>
-              </div>
-            </div>
-          </div>
+
+        <div class="bottomButtons">
+            <button id="bSpeichereGericht" type="submit" name="action">Deine heutige Gerichteauswahl abspeichern</button>
+            <button id="bZeigeKalorien" type="submit" name="action">??? / ??? kcal</button>
         </div>
-      </div>
-      <div class="column">
-        <div id="dinner">
-          <h1><b>ABENDESSEN</b></h1>
-          <div class="transparentBox">
-            <div class="grid">
-              <div class="div_dinner_g1">
-                <button id="dinner_g1" class="bGericht" type="submit" name="action" >Gericht 1</button>
-              </div>
-              <div class="div_dinner_g1">
-                <button id="dinner_g2" class="bGericht" type="submit" name="action" >Gericht 2</button>
-              </div>
-              <div class="div_dinner_g1">
-                <button id="dinner_g3" class="bGericht" type="submit" name="action" >Gericht 3</button>
-              </div>
-              <div class="div_dinner_g1">
-                <button id="dinner_g4" class="bGericht" type="submit" name="action" >Gericht 4</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bottomButtons">
-        <button id="bSpeichereGericht" type="submit" name="action" >Deine heutige Gerichteauswahl abspeichern</button>
-        <button id="bZeigeKalorien" type="submit" name="action" >??? / ??? kcal</button>
-      </div>
-      <a href="#/eingabe">Eingabe</a>
     </body>
 </section>

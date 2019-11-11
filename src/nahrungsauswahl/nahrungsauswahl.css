@@ -7,26 +7,7 @@ section {
 
 #sec_2 {
   height: 100%;
-}
-
-.column {
-  padding: 0;
-  width: 33.33%;
-  float: left;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column.left, .column.right {
-    width: 100%;
-  }
+  overflow: scroll;
 }
 
 h1 {
@@ -49,22 +30,26 @@ h1 {
 }
 
 #breakfast {
-  height: 100%;
   background-image: url("breakfast.jpeg");
   background-size: cover;
+  height: 100vh;
+  margin-left: -15px;
 }
 
 #lunch {
-  height: 100%;
   background-image: url("lunch.jpeg");
   background-size: cover;
+  height: 100vh;
+
 }
 
 #dinner {
-  height: 100%;
   background-image: url("dinner.jpg");
   background-size: cover;
+  height: 100vh;
+  margin-right: -15px;
 }
+
 
 .grid {
   display: grid;
@@ -142,5 +127,18 @@ h1 {
 }
 #datum{
 margin-left: 12px;
+}
 
+@media (max-width: 767px) {
+
+    #breakfast{
+        margin-right: -15px;
+    }
+    #lunch{
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    #dinner{
+        margin-left: -15px;
+    }
 }
