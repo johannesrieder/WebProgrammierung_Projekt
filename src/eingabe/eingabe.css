@@ -9,36 +9,7 @@ section {
   background-image:url("index_background.jpg");
   background-size: cover;
   height: 100%;
-}
-
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
-
-/* Left and right column */
-.column.left {
-  width: 60%;
-}
-
-/* Middle column */
-.column.right {
-  width: 40%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column.left, .column.right {
-    width: 100%;
-  }
+  overflow: scroll;
 }
 
 .transparentBox {
@@ -81,11 +52,19 @@ section {
   font-family: 'Roboto', sans-serif;
   font-size: 25pt;
 }
+#Aktivitätslevel{
+    margin-left: 2em;
+}
 
 #eingabe_bottomButtons {
   width: 100%;
   padding: 5%;
   text-align: center;
+}
+
+.radio{
+    color: white;
+    margin-left: 2em;
 }
 
 .button{
@@ -117,6 +96,10 @@ section {
     display: none;
 }
 
+.eingabezeile{
+    width: 8em;
+    margin-left: 2em;
+}
 #eingabe_kalorienbedarf {
   padding-top: 5%;
   padding-bottom: 2.5%;
@@ -131,4 +114,30 @@ section {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 100px;
+}
+
+@media (max-width: 500px) {
+    .col-lg-4{
+        margin-top: -50px;
+    }
+    #eingabe_untertitel{
+        font-size: 1em;
+    }
+    #eingabe_titel{
+        font-size: 2em;
+    }
+    #eingabe_transparentBox{
+            margin: auto;
+            margin-top: 1em;
+        }
+        #eingabe_kalorienbedarf{
+            font-size: 2em;
+        }
+        #eingabe_ergebnisKB{
+            font-size: 2em;
+            margin-top: -10px;
+        }
+        .button{
+            font-size: 16px;
+        }
 }

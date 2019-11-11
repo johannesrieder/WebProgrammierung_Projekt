@@ -7,6 +7,6 @@ html, body {
 .main {
 }
 
-header, section, footer {
+header, section,footer {
   overflow: hidden;
 }
