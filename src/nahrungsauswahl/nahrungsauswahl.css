@@ -40,7 +40,6 @@ h1 {
   background-image: url("lunch.jpeg");
   background-size: cover;
   height: 100vh;
-
 }
 
 #dinner {
@@ -87,10 +86,44 @@ h1 {
   grid-column-end: 2;
 }
 
-#lunch_g4_reisThunfisch {
-  background-image: url("lunch_g4_reisThunfisch.jpg");
-  width: 100%;
-  height: 100%;
+#lunch_g1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#lunch_g2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#lunch_g3 {
+  grid-column-start: 2;
+  grid-column-end: 1;
+}
+
+#lunch_g4 {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+#dinner_g1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#dinner_g2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#dinner_g3 {
+  grid-column-start: 2;
+  grid-column-end: 1;
+}
+
+#dinner_g4 {
+  grid-column-start: 2;
+  grid-column-end: 2;
 }
 
 .bottomButtons {
@@ -148,3 +181,56 @@ margin-left: 12px;
         margin-left: -15px;
     }
 }
+
+.grid input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.breakfast_g1{background-image:url("lunch_g4_reisThunfisch.jpg");}
+.breakfast_g2{background-image:url("lunch_g4_reisThunfisch.jpg");}
+.breakfast_g3{background-image:url("lunch_g4_reisThunfisch.jpg");}
+.breakfast_g4{background-image:url("lunch_g4_reisThunfisch.jpg");}
+
+.lunch_g1{background-image:url("lunch_g4_reisThunfisch.jpg");}
+.lunch_g2{background-image:url("lunch_g4_reisThunfisch.jpg");}
+.lunch_g3{background-image:url("lunch_g4_reisThunfisch.jpg");}
+.lunch_g4{background-image:url("lunch_g4_reisThunfisch.jpg");}
+
+.dinner_g1{background-image:url("lunch_g4_reisThunfisch.jpg");}
+.dinner_g2{background-image:url("lunch_g4_reisThunfisch.jpg");}
+.dinner_g3{background-image:url("lunch_g4_reisThunfisch.jpg");}
+.dinner_g4{background-image:url("lunch_g4_reisThunfisch.jpg");}
+
+
+.grid input:active +.drinkcard-cc{opacity: .9;}
+.grid input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.radio{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.radio:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}
