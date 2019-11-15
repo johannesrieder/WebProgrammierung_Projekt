@@ -50,15 +50,14 @@ h1 {
 }
 
 .grid {
-  display: grid;
+  display:grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: auto auto;
   padding: 5%;
-  grid-gap: 5%;
 }
 
 .grid input{
+    width: 50%;
     margin:0;padding:0;
     -webkit-appearance:none;
        -moz-appearance:none;
@@ -69,23 +68,15 @@ h1 {
     cursor:pointer;
     background-size:contain;
     background-repeat:no-repeat;
-    -webkit-transition: all 100ms ease-in;
-       -moz-transition: all 100ms ease-in;
             transition: all 100ms ease-in;
-    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
-       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
             filter: brightness(1.8) grayscale(1) opacity(.7);
 }
 .radio:hover{
-    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
-       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
             filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
 
 .grid input:active +.radio {opacity: .9;}
 .grid input:checked +.radio {
-    -webkit-filter: none;
-       -moz-filter: none;
             filter: none;
 }
 
@@ -95,65 +86,19 @@ a{color:#444;text-decoration:none;}
 p{margin-bottom:.3em;}
 
 .breakfast_g1{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#breakfast_g1 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
 .breakfast_g2{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#breakfast_g2 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
 .breakfast_g3{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#breakfast_g3 {
-  grid-column-start: 2;
-  grid-column-end: 1;
-}
 .breakfast_g4{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#breakfast_g4 {
-  grid-column-start: 2;
-  grid-column-end: 2;
-}
+
 .lunch_g1{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#lunch_g1 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
 .lunch_g2{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#lunch_g2 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
 .lunch_g3{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#lunch_g3 {
-  grid-column-start: 2;
-  grid-column-end: 1;
-}
 .lunch_g4{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#lunch_g4 {
-  grid-column-start: 2;
-  grid-column-end: 2;
-}
+
 .dinner_g1{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#dinner_g1 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
 .dinner_g2{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#dinner_g2 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
 .dinner_g3{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#dinner_g3 {
-  grid-column-start: 2;
-  grid-column-end: 1;
-}
 .dinner_g4{background-image:url("lunch_g4_reisThunfisch.jpg");}
-#dinner_g4 {
-  grid-column-start: 2;
-  grid-column-end: 2;
-}
 
 .bottomButtons {
   width: 100%;
