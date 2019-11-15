@@ -11,7 +11,7 @@
             this._app = app;
 
             console.log(0);
-            document.getElementById("volume").addEventListener("input", this.ausgeben);
+            //document.getElementById("volume").addEventListener("input", this.ausgeben);
 
         }
         ausgeben(ev) {
