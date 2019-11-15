@@ -65,8 +65,6 @@ section {
 .radio{
     color: white;
     margin-left: 2em;
-    width: 10em;
-    margin-bottom: -3em;
 }
 
 .button{
@@ -116,6 +114,10 @@ section {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 100px;
+}
+
+::-webkit-scrollbar {
+    display: block;
 }
 
 @media (max-width: 500px) {
