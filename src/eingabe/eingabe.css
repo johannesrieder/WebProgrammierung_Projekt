@@ -65,6 +65,8 @@ section {
 .radio{
     color: white;
     margin-left: 2em;
+    width: 10em;
+    margin-bottom: -3em;
 }
 
 .button{
