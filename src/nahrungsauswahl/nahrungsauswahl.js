@@ -10,11 +10,6 @@
 
         }
 
-        changeText() {
-          const p = document.querySelector('test');
-          p.textContent = "I changed because of an inline event handler.";
-        }
-
     }
 
     export default Nahrungsauswahl;
