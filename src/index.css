@@ -10,3 +10,8 @@ html, body {
 header, section,footer {
   overflow: hidden;
 }
+
+::-webkit-scrollbar {
+    display: block;
+    width: 0px;
+}
