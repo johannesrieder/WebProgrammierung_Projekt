@@ -113,6 +113,7 @@ export default class Nahrungsauswahl {
 
   saveNahrungsauswahl(a_nahrungsauswahl){
     console.log(a_nahrungsauswahl);
+    localStorage.setItem("a_nahrungsauswahl", a_nahrungsauswahl);
     return a_nahrungsauswahl;
   }
 
