@@ -20,9 +20,10 @@ class Eingabe {
       var eingabeGewicht = document.getElementById("EingabeGewicht").value;
 
       if (eingabeAlter != "" && eingabeGröße != "" && eingabeGewicht != "") { //überprüft Eingaben auf Vollständigkeit
-          console.log(eingabeGewicht);
-          console.log(eingabeGröße);
-          console.log(eingabeAlter);
+          if(eingabeAlter < 14 || eingabeAlter > 150 || eingabeGröße < 100 || eingabeGröße > 300 || eingabeGewicht < 30 || eingabeGewicht > 600){ //Überprüft Eingaben auf realistische Werte
+              alert("Eingabedaten im falschen Wertebereich!");
+          }
+          else{
           if (document.getElementById("männlich").checked) {
               var kalorienanzahl = (10 * eingabeGewicht) + (6.25 * eingabeGröße) - (5 * eingabeAlter) + 5;
           } else if (document.getElementById("weiblich").checked) {
@@ -37,7 +38,10 @@ class Eingabe {
               kalorienanzahl *= 1.725;
           }
           document.getElementById("eingabe_ergebnisKB").innerHTML = Math.round(kalorienanzahl);
+          //Stellt Kalorienbedarf anderen Seiten zur Verfügung
+          localStorage.setItem("kalorienanzahl", kalorienanzahl);
       }
+  }
       else {
           alert("Eingaben unvollständig!");
       }

@@ -1,119 +1,125 @@
 section {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  height: 92.5%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 92.5%;
 }
 
 #sec_1 {
-  background-image:url("index_background.jpg");
-  background-size: cover;
-  height: 100%;
-  overflow: scroll;
+    background-image: url("index_background.jpg");
+    background-size: cover;
+    height: 100%;
+    overflow: scroll;
 }
 
 .transparentBox {
-  background-color: black;
-  opacity: 80%;
-  border-radius: 25px;
-  color: white;
+    background-color: black;
+    opacity: 80%;
+    border-radius: 25px;
+    color: white;
 }
 
 #eingabe_transparentBox {
-  margin: 2%;
-  height: 80%;
-  width: 100%;
+    margin: 2%;
+    height: 80%;
+    width: 100%;
 }
 
 #ergebnis_transparentBox {
-  margin-top: 20%;
-  margin-bottom: 20%;
-  margin-left: 4%;
-  margin-right: 2%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    margin-left: 4%;
+    margin-right: 2%;
+}
+
+#eingabe_ergebnisKB {
+    text-align: center;
 }
 
 #eingabe_titel {
-  padding-top: 5%;
-  padding-bottom: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  font-family: 'Amatic SC', cursive;
-  font-size: 40pt;
+    padding-top: 5%;
+    padding-bottom: 2.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40pt;
 }
 
 #eingabe_table {
-  margin-left: 10%;
-  margin-right: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #eingabe_untertitel {
-  color: white;
-  padding-left: 10%;
-  font-family: 'Roboto', sans-serif;
-  font-size: 25pt;
+    color: white;
+    padding-left: 10%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25pt;
 }
-#Aktivitätslevel{
+
+#Aktivitätslevel {
     margin-left: 2em;
 }
 
 #eingabe_bottomButtons {
-  width: 100%;
-  padding: 5%;
-  text-align: center;
+    width: 100%;
+    padding: 5%;
+    text-align: center;
 }
 
-.radio{
+.radio {
     color: white;
     margin-left: 2em;
 }
 
-.button{
-  width: 40%;
-  padding-top: 1%;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-bottom: 1%;
-  color: white;
-  font-family: 'Amatic SC', sans-serif;
-  color: white;
-  font-size: 20pt;
-  background-color: green;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+.button {
+    width: 40%;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+    color: white;
+    font-family: 'Amatic SC', sans-serif;
+    color: white;
+    font-size: 20pt;
+    background-color: green;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
-.button:hover{
+.button:hover {
     background-color: #003300;
 }
 
 .button:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.eingabezeile{
+.eingabezeile {
     width: 8em;
     margin-left: 2em;
 }
+
 #eingabe_kalorienbedarf {
-  padding-top: 5%;
-  padding-bottom: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  font-family: 'Amatic SC', cursive;
-  font-size: 40pt;
+    padding-top: 5%;
+    padding-bottom: 2.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40pt;
 }
 
 #eingabe_ergebnisKB {
-  margin: 5%;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-size: 100px;
+    margin: 5%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100px;
 }
 
 ::-webkit-scrollbar {
@@ -121,27 +127,40 @@ section {
 }
 
 @media (max-width: 500px) {
-    .col-lg-4{
+    .col-lg-4 {
         margin-top: -50px;
     }
-    #eingabe_untertitel{
+
+    #eingabe_untertitel {
         font-size: 1em;
     }
-    #eingabe_titel{
+
+    #eingabe_titel {
         font-size: 2em;
     }
-    #eingabe_transparentBox{
-            margin: auto;
-            margin-top: 1em;
-        }
-        #eingabe_kalorienbedarf{
-            font-size: 2em;
-        }
-        #eingabe_ergebnisKB{
-            font-size: 2em;
-            margin-top: -10px;
-        }
-        .button{
-            font-size: 16px;
-        }
+
+    #eingabe_transparentBox {
+        margin: auto;
+        margin-top: 1em;
+    }
+
+    #eingabe_kalorienbedarf {
+        font-size: 2em;
+    }
+
+    #eingabe_ergebnisKB {
+        font-size: 2em;
+        margin-top: -10px;
+    }
+
+    #ergebnis_transparentBox {
+        width: 60%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .button {
+        font-size: 16px;
+    }
 }
