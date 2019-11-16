@@ -1,7 +1,8 @@
 "use strict";
 
     import stylesheet from "./verlauf.css";
-    import Database from "C:/Users/julia_000/WebProgrammierung_Projekt/src/database.js"
+  //  import Database from "C:/Users/julia_000/WebProgrammierung_Projekt/src/database.js"
+    import Database from "../database.js"
 
     class Verlauf {
 
@@ -22,7 +23,7 @@
               bezeichnung: "Thunfisch",
               kalorienanzahl: "1000",
             }
-
+          //  gericht.clear();
             gericht.saveNew(objekt, this);
         }
         updateVerlauf(anzahl, db) {
@@ -30,11 +31,10 @@
           console.log("klappt");
           let ausgabe=db.getById(1);
           ausgabe.then(ergebnis => {
-          alert(ergebnis["bezeichnung"]);
+            console.log(ergebnis);
           document.getElementById("datum0").innerHTML =ergebnis["datum"];
           document.getElementById("bezeichnung0").innerHTML =ergebnis["bezeichnung"];
           document.getElementById("kalorien0").innerHTML =ergebnis["kalorienanzahl"];
-
           }).catch(fehler => {
           alert(fehler);
           });
@@ -43,8 +43,9 @@
           //console.log(ausgabe["datum"]);
           //console.log(ausgabe["bezeichnung"]);
           //console.log(ausgabe["kalorienanzahl"]);
-          //let suche =db.search("1");
-          //console.log(suche);
+          let suche =db.search("1");
+          console.log(suche);
+          console.log(suche[0]);
 
 
             //document.getElementById("output").value =neu.target.value;

@@ -82,6 +82,7 @@ class Gericht {
      * @return {Promise} Asynchrones Promise-Objekt mit dem Tag
      */
     async getById(id) {
+      console.log("id");
         return database.gericht.get(id);
     }
 
