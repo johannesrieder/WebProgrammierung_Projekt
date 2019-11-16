@@ -57,27 +57,27 @@ h1 {
 }
 
 .grid input{
-    width: 50%;
-    margin:0;padding:0;
-    -webkit-appearance:none;
-       -moz-appearance:none;
-            appearance:none;
+  width: 50%;
+  margin:0;padding:0;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
 }
 
 .radio {
-    cursor:pointer;
-    background-size:contain;
-    background-repeat:no-repeat;
-            transition: all 100ms ease-in;
-            filter: brightness(1.8) grayscale(1) opacity(.7);
+  cursor:pointer;
+  background-size:contain;
+  background-repeat:no-repeat;
+  transition: all 100ms ease-in;
+  filter: brightness(1.8) grayscale(1) opacity(.7);
 }
 .radio:hover{
-            filter: brightness(1.2) grayscale(.5) opacity(.9);
+  filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
 
 .grid input:active +.radio {opacity: .9;}
 .grid input:checked +.radio {
-            filter: none;
+  filter: none;
 }
 
 /* Extras */
@@ -100,7 +100,7 @@ p{margin-bottom:.3em;}
 .dinner_g3{background-image:url("lunch_g4_reisThunfisch.jpg");}
 .dinner_g4{background-image:url("lunch_g4_reisThunfisch.jpg");}
 
-.bottomButtons {
+.bottom {
   width: 100%;
   bottom: 5%;
   position: absolute;
@@ -122,7 +122,7 @@ p{margin-bottom:.3em;}
   cursor: pointer;
 }
 
-#bZeigeKalorien {
+#lKalorien {
   width: 15%;
   margin-left: 5%;
   margin-right: 5%;
@@ -136,22 +136,21 @@ p{margin-bottom:.3em;}
   background-color: #44bd32;
   border-style: none;
   border-radius: 25px;
-  cursor: pointer;
 }
 #datum{
-margin-left: 12px;
+  margin-left: 12px;
 }
 
 @media (max-width: 767px) {
 
-    #breakfast{
-        margin-right: -15px;
-    }
-    #lunch{
-        margin-right: -15px;
-        margin-left: -15px;
-    }
-    #dinner{
-        margin-left: -15px;
-    }
+  #breakfast{
+    margin-right: -15px;
+  }
+  #lunch{
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  #dinner{
+    margin-left: -15px;
+  }
 }

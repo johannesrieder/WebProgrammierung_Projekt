@@ -22,7 +22,7 @@ import verlaufformular from "./verlauf/verlaufformular.html";
 
         this._router = new Navigo(null, true);
         this._currentUrl = "";
-		this._navAborted = false;
+		    this._navAborted = false;
 
 
         this._router.on({
@@ -60,6 +60,7 @@ import verlaufformular from "./verlauf/verlaufformular.html";
             let newDiv = document.createElement("div");
             newDiv.innerHTML = nahrungsauswahlformular.trim();
             document.getElementById("content").appendChild(newDiv);
+            new Nahrungsauswahl();
 		}
 
         showEingabe() {
