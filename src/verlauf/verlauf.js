@@ -13,31 +13,42 @@
         constructor(app) {
 
             this._app = app;
+            this.idStart=1;
+            this.anzahl=0;
 
-            //gericht.saveNew();
-            //document.getElementById("volume").addEventListener("input", this.ausgeben);
             let gericht = new Database.Gericht();
 
             let objekt={
               datum: "15.11.2019",
-              bezeichnung: "Thunfisch",
+              bezeichnung: "Lachs",
               kalorienanzahl: "1000",
             }
           //  gericht.clear();
             gericht.saveNew(objekt, this);
         }
-        updateVerlauf(anzahl, db) {
-          console.log(anzahl);
-          console.log("klappt");
-          let ausgabe=db.getById(1);
-          ausgabe.then(ergebnis => {
-            console.log(ergebnis);
-          document.getElementById("datum0").innerHTML =ergebnis["datum"];
-          document.getElementById("bezeichnung0").innerHTML =ergebnis["bezeichnung"];
-          document.getElementById("kalorien0").innerHTML =ergebnis["kalorienanzahl"];
-          }).catch(fehler => {
-          alert(fehler);
-          });
+
+        setAnzahl(pAnzahl){
+        this.anzahl=pAnzahl;
+        console.log("Anzahl"+this.anzahl);
+        }
+
+        updateVerlauf(anzahl,db) {
+        // console.log("Anzahl hier"+this.anzahl);
+
+          for (let i=(this.idStart+anzahl);i>=this.idStart; i-- ){
+
+            let ausgabe=db.getById(i);
+            ausgabe.then(ergebnis => {
+              console.log(ergebnis);
+              document.getElementById("daily_record").innerHTML += "<div class=\"row\"id=\"zeile\"><div class=\"column\"id=\"left_center\"><p id=\"datum5\">" + ergebnis["datum"] + "</p></div><div class=\"column\"id=\"left_center\"><p id=\"kalorien0\"><b>"+ ergebnis["kalorienanzahl"] +"/5000</b></p><p id=\"bezeichnung0\">" + ergebnis["bezeichnung"] + "</p></div><div class=\"column\"id=\"farbe\"></div></div>";
+            //document.getElementById("datum0").innerHTML =ergebnis["datum"];
+            //document.getElementById("bezeichnung0").innerHTML =ergebnis["bezeichnung"];
+            //document.getElementById("kalorien0").innerHTML =ergebnis["kalorienanzahl"];
+            }).catch(fehler => {
+            alert(fehler);
+            });
+          }
+
 
           //console.log(ausgabe.toArray());
           //console.log(ausgabe["datum"]);
@@ -45,7 +56,7 @@
           //console.log(ausgabe["kalorienanzahl"]);
           let suche =db.search("1");
           console.log(suche);
-          console.log(suche[0]);
+
 
 
             //document.getElementById("output").value =neu.target.value;
