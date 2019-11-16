@@ -2,131 +2,117 @@
 
 import stylesheet from "./nahrungsauswahl.css";
 
+
 export default class Nahrungsauswahl {
 
   constructor(app) {
     this._app = app;
 
-    let o_nahrungsauswahl = {
-      gericht_b: o_gericht_b,
-      gericht_l: o_gericht_l,
-      gericht_d: o_gericht_d,
-    }
+    let all_breakfast_g = document.getElementsByName("breakfast_g");
+      var a_gericht_b = all_breakfast_g.forEach(element => element.addEventListener('click', this.updateBreakfast));
+    let all_lunch_g = document.getElementsByName("lunch_g");
+      var a_gericht_l = all_lunch_g.forEach(element => element.addEventListener('click', this.updateLunch));
+    let all_dinner_g = document.getElementsByName("dinner_g");
+      var a_gericht_d = all_dinner_g.forEach(element => element.addEventListener('click', this.updateDinner));
 
-    let o_gericht_b = {
-      bezeichnung: "",
-      kalorienanzahl: 0,
-    }
+    var a_nahrungsauswahl = [a_gericht_b, a_gericht_l, a_gericht_d];
+    document.getElementById("bSpeichereGericht").addEventListener("click", this.saveNahrungsauswahl);
 
-    let o_gericht_l = {
-      bezeichnung: "",
-      kalorienanzahl: 0,
-    }
-
-    let o_gericht_d = {
-      bezeichnung: "",
-      kalorienanzahl: 0,
-    }
-
-    document.getElementById("breakfast_g1").addEventListener("click", updateBreakfast);
-    document.getElementById("breakfast_g2").addEventListener("click", updateBreakfast);
-    document.getElementById("breakfast_g3").addEventListener("click", updateBreakfast);
-    document.getElementById("breakfast_g4").addEventListener("click", updateBreakfast);
-
-    document.getElementById("lunch_g1").addEventListener("click", updateLunch);
-    document.getElementById("lunch_g2").addEventListener("click", updateLunch);
-    document.getElementById("lunch_g3").addEventListener("click", updateLunch);
-    document.getElementById("lunch_g4").addEventListener("click", updateLunch);
-
-    document.getElementById("dinner_g1").addEventListener("click", updateDinner);
-    document.getElementById("dinner_g2").addEventListener("click", updateDinner);
-    document.getElementById("dinner_g3").addEventListener("click", updateDinner);
-    document.getElementById("dinner_g4").addEventListener("click", updateDinner);
-
-    document.getElementById("bSpeichereGericht").addEventListener("click", saveNahrungsauswahl);
-
-  }
-
-  updateKalorienanzahl(){
-    var kalorienanzahl_summe = kalorienanzahl_breakfast + kalorienanzahl_lunch + kalorienanzahl_dinner;
-    changeText(kalorienanzahl_summe);
-    changeColor(kalorienanzahl_summe, kalorienanzahl_optimum);
   }
 
   updateBreakfast(){
-    var breakfast = document.querySelector('input[name = "breakfast_g"]:checked').value;
-    switch (breakfast) {
-      case "breakfast_g1":
-      o_gericht_b.bezeichnung = "Ei";
-      o_gericht_b.kalorienanzahl = 200;
-      break;
-      case "breakfast_g2":
-      o_gericht_b.bezeichnung = "Bacon";
-      o_gericht_b.breakfast = 300;
-      break;
-      case "breakfast_g3":
-      o_gericht_b.bezeichnung = "Brot";
-      o_gericht_b.breakfast = 400;
-      break;
-      case "breakfast_g4":
-      o_gericht_b.bezeichnung = "Müsli";
-      o_gericht_b.breakfast = 500;
-      break;
-      default:
+    var breakfast = document.getElementsByName('breakfast_g');
+    for (var i = 0, length = breakfast.length; i < length; i++) {
+      if (breakfast[i].checked) {
+        switch (breakfast[i].value) {
+          case "breakfast_g1":
+          var gericht_bezeichnung = "Obst";
+          var gericht_kalorienanzahl = 300;
+          break;
+          case "breakfast_g2":
+          var gericht_bezeichnung = "Brot";
+          var gericht_kalorienanzahl = 500;
+          break;
+          case "breakfast_g3":
+          var gericht_bezeichnung = "Müsli";
+          var gericht_kalorienanzahl = 600;
+          break;
+          case "breakfast_g4":
+          var gericht_bezeichnung = "Wurst";
+          var gericht_kalorienanzahl = 700;
+          break;
+          default:
+        }
+        var a_gericht_b = [gericht_bezeichnung, gericht_kalorienanzahl];
+        console.log(a_gericht_b);
+        return a_gericht_b;
+      }
     }
-    document.getElementById("lKalorien").innerHTML = o_nahrungsauswahl.o_gericht_b.kalorienanzahl+o_nahrungsauswahl.o_gericht_l.kalorienanzahl+o_nahrungsauswahl.o_gericht_d.kalorienanzahl+" / XXX kcal";
   }
 
   updateLunch(){
-    var lunch = document.querySelector('input[name = "lunch_g"]:checked').value;
-    switch (lunch) {
-      case "lunch_g1":
-      o_gericht_l.bezeichnung = "Fisch";
-      o_gericht_l.kalorienanzahl = 400;
-      break;
-      case "lunch_g2":
-      o_gericht_l.bezeichnung = "Steak";
-      o_gericht_l.kalorienanzahl = 500;
-      break;
-      case "lunch_g3":
-      o_gericht_l.bezeichnung = "Salat";
-      o_gericht_l.kalorienanzahl = 600;
-      break;
-      case "lunch_g4":
-      o_gericht_l.bezeichnung = "Nudeln";
-      o_gericht_l.kalorienanzahl = 700;
-      break;
-      default:
+    var lunch = document.getElementsByName('lunch_g');
+    for (var i = 0, length = lunch.length; i < length; i++) {
+      if (lunch[i].checked) {
+        switch (lunch[i].value) {
+          case "lunch_g1":
+          var gericht_bezeichnung = "Steak";
+          var gericht_kalorienanzahl = 400;
+          break;
+          case "lunch_g2":
+          var gericht_bezeichnung = "Fisch";
+          var gericht_kalorienanzahl = 500;
+          break;
+          case "lunch_g3":
+          var gericht_bezeichnung = "Nudeln";
+          var gericht_kalorienanzahl = 600;
+          break;
+          case "lunch_g4":
+          var gericht_bezeichnung = "Risotto";
+          var gericht_kalorienanzahl = 700;
+          break;
+          default:
+        }
+        var a_gericht_l = [gericht_bezeichnung, gericht_kalorienanzahl];
+        console.log(a_gericht_l);
+        return a_gericht_l;
+      }
     }
-    document.getElementById("lKalorien").innerHTML = o_nahrungsauswahl.o_gericht_b.kalorienanzahl+o_nahrungsauswahl.o_gericht_l.kalorienanzahl+o_nahrungsauswahl.o_gericht_d.kalorienanzahl+" / XXX kcal";
   }
 
   updateDinner(){
-    var dinner = document.querySelector('input[name = "dinner_g"]:checked').value;
-    switch (dinner) {
-      case "dinner_g1":
-      o_gericht_d.bezeichnung = "Wurst";
-      o_gericht_d.kalorienanzahl = 600;
-      break;
-      case "dinner_g2":
-      o_gericht_d.bezeichnung = "Käse";
-      o_gericht_d.kalorienanzahl = 500;
-      break;
-      case "dinner_g3":
-      o_gericht_d.bezeichnung = "Gemüse";
-      o_gericht_d.kalorienanzahl = 400;
-      break;
-      case "dinner_g4":
-      o_gericht_d.bezeichnung = "Brot";
-      o_gericht_d.kalorienanzahl = 300;
-      break;
-      default:
+    var dinner = document.getElementsByName('dinner_g');
+    for (var i = 0, length = dinner.length; i < length; i++) {
+      if (dinner[i].checked) {
+        switch (dinner[i].value) {
+          case "dinner_g1":
+          var gericht_bezeichnung = "Wurst";
+          var gericht_kalorienanzahl = 500;
+          break;
+          case "dinner_g2":
+          var gericht_bezeichnung = "Käse";
+          var gericht_kalorienanzahl = 600;
+          break;
+          case "dinner_g3":
+          var gericht_bezeichnung = "Gemüse";
+          var gericht_kalorienanzahl = 300;
+          break;
+          case "dinner_g4":
+          var gericht_bezeichnung = "Brot";
+          var gericht_kalorienanzahl = 400;
+          break;
+          default:
+        }
+        var a_gericht_d = [gericht_bezeichnung, gericht_kalorienanzahl];
+        console.log(a_gericht_d);
+        return a_gericht_d;
+      }
     }
-    document.getElementById("lKalorien").innerHTML = o_nahrungsauswahl.o_gericht_b.kalorienanzahl+o_nahrungsauswahl.o_gericht_l.kalorienanzahl+o_nahrungsauswahl.o_gericht_d.kalorienanzahl+" / XXX kcal";
   }
 
-  saveNahrungsauswahl(){
-    return o_nahrungsauswahl;
+  saveNahrungsauswahl(a_nahrungsauswahl){
+    console.log(a_nahrungsauswahl);
+    return a_nahrungsauswahl;
   }
 
   onShow() {
