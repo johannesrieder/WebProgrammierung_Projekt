@@ -7,6 +7,7 @@ export default class Nahrungsauswahl {
 
   constructor(app) {
     this._app = app;
+    var kalorienanzahl = localStorage.getItem("kalorienanzahl");
 
     let all_breakfast_g = document.getElementsByName("breakfast_g");
       var a_gericht_b = all_breakfast_g.forEach(element => element.addEventListener('click', this.updateBreakfast));
