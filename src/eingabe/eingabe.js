@@ -8,7 +8,7 @@ class Eingabe {
     constructor(app) {
         this._app = app;
 
-        var kalorienanzahl = document.getElementById("bBerechnung").addEventListener("click", this.berechneKalorien);
+        document.getElementById("bBerechnung").addEventListener("click", this.berechneKalorien);
 
         document.getElementById("bReset").addEventListener("click", this.resetEingaben);
     }
@@ -20,21 +20,23 @@ class Eingabe {
       var eingabeGewicht = document.getElementById("EingabeGewicht").value;
 
       if (eingabeAlter != "" && eingabeGröße != "" && eingabeGewicht != "") { //überprüft Eingaben auf Vollständigkeit
+          console.log(eingabeGewicht);
+          console.log(eingabeGröße);
+          console.log(eingabeAlter);
           if (document.getElementById("männlich").checked) {
-              var kalorienanzahl = (10 * eingabeGewicht) + (6,25 * eingabeGröße) - (5 * eingabeAlter) + 5;
+              var kalorienanzahl = (10 * eingabeGewicht) + (6.25 * eingabeGröße) - (5 * eingabeAlter) + 5;
           } else if (document.getElementById("weiblich").checked) {
-              var kalorienanzahl = (10 * eingabeGewicht) + (6,25 * eingabeGröße) - (5 * eingabeAlter) - 161;
+              var kalorienanzahl = (10 * eingabeGewicht) + (6.25 * eingabeGröße) - (5 * eingabeAlter) - 161;
           }
 
           if (document.getElementById("Aktivitätslevel").value == "leicht") {
-              kalorienanzahl *= 1,375;
+              kalorienanzahl *= 1.375;
           } else if (document.getElementById("Aktivitätslevel").value == "moderat") {
-              kalorienanzahl *= 1,55;
+              kalorienanzahl *= 1.55;
           } else if (document.getElementById("Aktivitätslevel").value == "sehrAktiv") {
-              kalorienanzahl *= 1,725;
+              kalorienanzahl *= 1.725;
           }
-          document.getElementById("eingabe_ergebnisKB").innerHTML = kalorienanzahl;
-          return kalorienanzahl;
+          document.getElementById("eingabe_ergebnisKB").innerHTML = Math.round(kalorienanzahl);
       }
       else {
           alert("Eingaben unvollständig!");
@@ -45,6 +47,7 @@ class Eingabe {
         document.getElementById("EingabeAlter").value = "";
         document.getElementById("EingabeGröße").value = "";
         document.getElementById("EingabeGewicht").value = "";
+        document.getElementById("eingabe_ergebnisKB").innerHTML = "0";
     }
 }
 export default Eingabe;
