@@ -21,9 +21,6 @@ database.version(2).stores({
  * wird hierfür Dexie zur lokalen Speicherung im Browser genutzt.
  */
 class Gericht {
-
-
-
     /**
      * Einen neuen Tag speichern oder einen vorhandenen Tag
      * aktualisieren. Das Tag-Objekt sollte hierfür folgenden Aufbau
