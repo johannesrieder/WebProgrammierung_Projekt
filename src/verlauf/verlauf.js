@@ -1,22 +1,50 @@
 "use strict";
 
     import stylesheet from "./verlauf.css";
+    import Database from "C:/Users/julia_000/WebProgrammierung_Projekt/src/database.js"
 
     class Verlauf {
+
         /**
          * Konstruktor.
          * @param {Objekt} app Zentrales App-Objekt der Anwendung
          */
         constructor(app) {
+
             this._app = app;
 
-            console.log(0);
+            //gericht.saveNew();
             //document.getElementById("volume").addEventListener("input", this.ausgeben);
-
+            let gericht = new Database.Gericht();
+            let objekt={
+              datum: "15.11.2019",
+              bezeichnung: "Thunfisch",
+              kalorienanzahl: "1000",
+            }
+            gericht.saveNew(objekt, this);
         }
-        ausgeben(ev) {
-          console.log(3);
-            document.getElementById("output").value =ev.target.value;
+        updateVerlauf(anzahl, db) {
+          console.log(anzahl);
+          console.log("klappt");
+          let ausgabe=db.getById(1);
+          ausgabe.then(ergebnis => {
+          alert(ergebnis["bezeichnung"]);
+          console.log(ergebnis["datum"]);
+          console.log(ergebnis["bezeichnung"]);
+          console.log(ergebnis["kalorienanzahl"]);
+          }).catch(fehler => {
+          alert(fehler);
+          });
+
+          //console.log(ausgabe.toArray());
+          //console.log(ausgabe["datum"]);
+          //console.log(ausgabe["bezeichnung"]);
+          //console.log(ausgabe["kalorienanzahl"]);
+          //let suche =db.search("1");
+          //console.log(suche);
+
+
+            //document.getElementById("output").value =neu.target.value;
             //document.getElementById("output").innerHTML =ev;
         }
 

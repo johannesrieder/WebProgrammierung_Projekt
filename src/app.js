@@ -8,6 +8,7 @@ import Verlauf from "./verlauf/verlauf.js";
 import eingabeFormular from "./eingabe/eingabeFormular.html";
 import nahrungsauswahlformular from "./nahrungsauswahl/nahrungsauswahlformular.html";
 import verlaufformular from "./verlauf/verlaufformular.html";
+import Database from "database.js"
     /**
      * Hauptklasse der Anwendung. Kümmert sich darum, die Anwendung auszuführen
      * und die angeforderten Bildschirmseiten anzuzeigen.
@@ -47,6 +48,8 @@ import verlaufformular from "./verlauf/verlaufformular.html";
                 }
             }
         });
+
+      
     }
         /**
          * Ab hier beginnt die Anwendung zu laufen.
@@ -76,6 +79,7 @@ import verlaufformular from "./verlauf/verlaufformular.html";
             newDiv.innerHTML = verlaufformular.trim();
             document.getElementById("content").appendChild(newDiv);
 						new Verlauf();
+            //new Gericht();
         }
 
        async _switchVisibleView(view) {

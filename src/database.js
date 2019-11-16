@@ -1,6 +1,7 @@
 "use strict";
 
 import Dexie from "dexie/dist/dexie.js";
+import Verlauf from "./verlauf/verlauf.js";
 
 // Datenbankdefinition:
 //
@@ -8,10 +9,10 @@ import Dexie from "dexie/dist/dexie.js";
 //   * datum, kalorienanzahl, gericht = Indexfelder für WHERE-Abfragen und die Sortierung
 //   * Alle anderen Felder müssen nicht deklariert werden!
 //   * Vgl. http://dexie.org/docs/API-Reference
-let database = new Dexie("Mein Tagebuch");
+let database = new Dexie("Verlauf");
 
 database.version(1).stores({
-    tage: "++id, kalorienanzahl, gericht,datum",
+    gericht: "++id, datum, bezeichnung, kalorienanzahl",
 });
 
 /**
@@ -19,11 +20,15 @@ database.version(1).stores({
  * Methoden, um Tage zu speichern und wieder auszulesen. Im Hintergrund
  * wird hierfür Dexie zur lokalen Speicherung im Browser genutzt.
  */
-class Tage {
+class Gericht {
+
+
+
     /**
      * Einen neuen Tag speichern oder einen vorhandenen Tag
      * aktualisieren. Das Tag-Objekt sollte hierfür folgenden Aufbau
      * besitzen:
+
      *
      * {
      *     datum: "Datum des Tages",
@@ -33,20 +38,25 @@ class Tage {
      *     data: "HTML-String",
      * }
      *
-     * @param  {Object}  tag Zu speichernder Tag
+     * @param  {Object}  gericht Zu speichernder Tag
      * @return {Promise} Asynchrones Promise-Objekt
      */
-    async saveNew(tag) {
-        return database.tage.add(tag);
+
+    async saveNew(gericht, verlauf) {
+
+      let rückgabe=database.gericht.add(gericht);
+
+      verlauf.updateVerlauf(5, this);
+        return rückgabe;
     }
 
     /**
      * Bereits vorhandenen Tag aktualisieren.
-     * @param  {Object}  tag Zu speichernder Tag
+     * @param  {Object}  gericht Zu speichernder Tag
      * @return {Promise} Asynchrones Promise-Objekt
      */
     async update(tag) {
-        return database.tage.put(tag);
+        return database.gericht.put(gericht);
     }
 
     /**
@@ -55,7 +65,7 @@ class Tage {
      * @return {Promise} Asynchrones Promise-Objekt
      */
     async delete(id) {
-        return database.tage.delete(id);
+        return database.gericht.delete(id);
     }
 
     /**
@@ -63,7 +73,7 @@ class Tage {
      * @return {Promise} Asynchrones Promise-Objekt
      */
     async clear() {
-        return database.tage.clear();
+        return database.gericht.clear();
     }
 
     /**
@@ -72,7 +82,7 @@ class Tage {
      * @return {Promise} Asynchrones Promise-Objekt mit dem Tag
      */
     async getById(id) {
-        return database.tage.get(id);
+        return database.gericht.get(id);
     }
 
     /**
@@ -86,10 +96,10 @@ class Tage {
         if (!query) query = "";
         query = query.toUpperCase();
 
-        let result = database.tage.filter(tag => {
-            let kalorienanzahl = tag.kalorienanzahl;
-            let datum  = tag.datum;
-			let gericht = tag.gericht;
+        let result = database.gericht.filter(gericht => {
+            let kalorienanzahl = gericht.kalorienanzahl;
+            let datum  = gericht.datum;
+			let gerichtt = gericht.bezeichnung;
             return datum.search(query) > -1 || kalorienanzahl.search(query) > -1 || gericht.search(query) > -1;
         });
 
@@ -99,5 +109,5 @@ class Tage {
 
 export default {
     database,
-    Tage,
+    Gericht,
 };
