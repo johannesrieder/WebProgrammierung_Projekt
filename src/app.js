@@ -23,7 +23,7 @@ import Database from "database.js"
 
         this._router = new Navigo(null, true);
         this._currentUrl = "";
-		this._navAborted = false;
+		    this._navAborted = false;
 
 
         this._router.on({
@@ -63,6 +63,7 @@ import Database from "database.js"
             let newDiv = document.createElement("div");
             newDiv.innerHTML = nahrungsauswahlformular.trim();
             document.getElementById("content").appendChild(newDiv);
+            new Nahrungsauswahl();
 		}
 
         showEingabe() {
