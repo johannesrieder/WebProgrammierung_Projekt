@@ -53,7 +53,6 @@ export default class Nahrungsauswahl {
     changeColor(kalorienanzahl_summe, kalorienanzahl_optimum);
   }
 
-
   updateBreakfast(){
     var breakfast = document.querySelector('input[name = "breakfast_g"]:checked').value;
     switch (breakfast) {
@@ -149,7 +148,3 @@ export default class Nahrungsauswahl {
     return "Nahrungsauswahl";
   }
 }
-
-  export async function throwAlert(){
-    alert("test")
-  }
