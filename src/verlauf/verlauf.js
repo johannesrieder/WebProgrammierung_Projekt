@@ -16,11 +16,13 @@
             //gericht.saveNew();
             //document.getElementById("volume").addEventListener("input", this.ausgeben);
             let gericht = new Database.Gericht();
+
             let objekt={
               datum: "15.11.2019",
               bezeichnung: "Thunfisch",
               kalorienanzahl: "1000",
             }
+
             gericht.saveNew(objekt, this);
         }
         updateVerlauf(anzahl, db) {
@@ -29,9 +31,10 @@
           let ausgabe=db.getById(1);
           ausgabe.then(ergebnis => {
           alert(ergebnis["bezeichnung"]);
-          console.log(ergebnis["datum"]);
-          console.log(ergebnis["bezeichnung"]);
-          console.log(ergebnis["kalorienanzahl"]);
+          document.getElementById("datum0").innerHTML =ergebnis["datum"];
+          document.getElementById("bezeichnung0").innerHTML =ergebnis["bezeichnung"];
+          document.getElementById("kalorien0").innerHTML =ergebnis["kalorienanzahl"];
+
           }).catch(fehler => {
           alert(fehler);
           });
