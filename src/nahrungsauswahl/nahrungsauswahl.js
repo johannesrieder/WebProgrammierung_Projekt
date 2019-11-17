@@ -199,17 +199,13 @@ export default class Nahrungsauswahl {
     console.log(a_gericht_d );
     let gericht = new Database.Gericht();
 
-  /*  let objekt={
+    let objekt={
       datum: "17.11.2019",
       bezeichnung: a_gericht_b[0],
       kalorienanzahl: a_gericht_b[1],
     }
-    */
-    let objekt={
-      datum: "15.11.2019",
-      bezeichnung: "Lachs",
-      kalorienanzahl: "1000",
-    }
+
+
   //  gericht.clear();
     gericht.saveNew(objekt);
     //localStorage.setItem("a_nahrungsauswahl", a_nahrungsauswahl);

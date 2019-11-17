@@ -37,13 +37,13 @@
         updateVerlauf(anzahl,db) {
         // console.log("Anzahl hier"+this.anzahl);
 
-          for (let i=(this.idStart+anzahl);i>=this.idStart; i-- ){
-
+          for (let i=(this.idStart+anzahl-1);i>=this.idStart; i-- ){
+            console.log("ID"+i);
             let ausgabe=db.getById(i);
 
             ausgabe.then(ergebnis => {
               console.log(ergebnis);
-              document.getElementById("daily_record").innerHTML += "<div class=\"row\"id=\"zeile\"><div class=\"column\"id=\"left_center\"><p id=\"datum5\">" + ergebnis["datum"] + "</p></div><div class=\"column\"id=\"left_center\"><p id=\"kalorien0\"><b>"+ ergebnis["kalorienanzahl"] +"/5000</b></p><p id=\"bezeichnung0\">" + ergebnis["bezeichnung"] + "</p></div><div class=\"column\"id=\"farbe\"></div></div>";
+              document.getElementById("daily_record").innerHTML += "<div class=\"row\"id=\"zeile\"><div class=\"column\"id=\"left_center\"><p id=\"datum5\">" + ergebnis["datum"] + "</p></div><div class=\"column\"id=\"left_center\"><p id=\"kalorien0\"><b>"+ ergebnis["kalorienanzahl"] +" kcal</b></p><p id=\"bezeichnung0\">" + ergebnis["bezeichnung"] + "</p></div><div class=\"column\"id=\"farbe\"></div></div>";
             //document.getElementById("datum0").innerHTML =ergebnis["datum"];
             //document.getElementById("bezeichnung0").innerHTML =ergebnis["bezeichnung"];
             //document.getElementById("kalorien0").innerHTML =ergebnis["kalorienanzahl"];
