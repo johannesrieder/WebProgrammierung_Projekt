@@ -163,12 +163,13 @@ p{margin-bottom:.3em;}
       height: 20em;
   }
   #bSpeichereGericht {
-      margin-left: 1em;
-      margin-top: -4em;
+      margin-left: 7.5%;
+      margin-top: -40%;
   }
   #lKalorien{
-      margin-right: 1em;
+      margin-left: 55%;
       width: 40%;
+      margin-top: -40%;
       text-align: center;
   }
 }
