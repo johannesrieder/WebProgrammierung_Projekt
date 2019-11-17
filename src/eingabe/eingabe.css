@@ -73,6 +73,11 @@ section {
     margin-bottom: -1em;
 }
 
+input[type="radio"]:checked+label {
+     font-weight: normal;
+     color: white;
+ }
+
 .button {
     width: 40%;
     padding-top: 1%;
