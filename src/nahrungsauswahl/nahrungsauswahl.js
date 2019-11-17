@@ -8,8 +8,7 @@ export default class Nahrungsauswahl {
 
   constructor(app) {
     this._app = app;
-  //  var kalorienanzahl = localStorage.getItem("kalorienanzahl");
-  //  console.log(kalorienanzahl);
+
     document.getElementById("lKalorien").innerHTML = "Bedarf:"+ localStorage.getItem("kalorienanzahl")+" kcal";
     let all_breakfast_g = document.getElementsByName("breakfast_g");
        this.a_gericht_b = all_breakfast_g.forEach(element => element.addEventListener('click', this.updateBreakfast));
@@ -23,6 +22,8 @@ export default class Nahrungsauswahl {
 
   }
 
+
+//Ausgewählte Gerichte in Datenbank speichern
   saveNahrungsauswahl(){
 
     ///Breakfast
@@ -112,8 +113,9 @@ export default class Nahrungsauswahl {
     let bez="";
     let kal="";
 
+    //Datensatz für Datenbank anpassen, je nachdem ob zu jeder Essenszeit Gerichte ausgewählt sind
     if(!a_gericht_b&&!a_gericht_l&&a__gericht_d){
-
+      //Wenn nichts ausgewählt --> nichts passiert
       return false;
     }
     else if (!a_gericht_b&&!a_gericht_l){
@@ -145,6 +147,7 @@ export default class Nahrungsauswahl {
       kal=a_gericht_b[1]+a_gericht_l[1]+a_gericht_d[1];
     }
 
+    //Aktuelles Datum für Datensatz holen
     var today = new Date();
     var d = today.getDate();
     var m = today.getMonth() + 1;
@@ -152,9 +155,10 @@ export default class Nahrungsauswahl {
 
     let datum = d+"."+m+"."+y;
 
+    //Berechneter Kalorienbedarf aus der Eingabeseite
     var kalorienbedarf = localStorage.getItem("kalorienanzahl");
 
-
+    //Datensatz erstellen
     let datensatz={
       datum: datum,
       bezeichnung: bez,
@@ -162,6 +166,7 @@ export default class Nahrungsauswahl {
       kalorienbedarf: kalorienbedarf,
     }
 
+    //Datensatz speichern
     gericht.saveNew(datensatz);
     return true;
   }

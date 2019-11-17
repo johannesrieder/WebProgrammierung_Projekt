@@ -13,84 +13,49 @@
         constructor(app) {
 
             this._app = app;
+            // durch die clear() methode der Datenbank, löschen sich alle Datensätze doch die Autoincrement ID bleibt bestehen
+            //idStart wird auf den ersten neuen Datensatz gesetzt
             this.idStart=1;
             this.anzahl=0;
 
             let gericht = new Database.Gericht();
-/*
-            let objekt={
-              datum: "15.11.2019",
-              bezeichnung: "Lachs",
-              kalorienanzahl: "1000",
-            }
-            */
-          //  gericht.clear();
-          //  gericht.saveNew(objekt, this);
-          gericht.aktualisiere(this);
+
+          gericht.aktualisiere(this); //Beim Wechsel auf die Seite Verlauf wird der Verlauf aktualisiert
         }
 
+        //Ändert this.anzahl nicht - methode wird nciht benutzt
         setAnzahl(pAnzahl){
         this.anzahl=pAnzahl;
         console.log("Anzahl"+this.anzahl);
         }
 
-        overwrite(gericht,db){
-          let tag=db.search("18.11.2019");
-          console.log("search");
-          console.log(tag);
-          if (!tag||tag==""){
-          console.log("kein Treffer");
-          db.saveNew(gericht);
-          }
-          else{
-            console.log("Überschreiben");
-            db.update(tag,gericht);}
-
-
-        }
 
         updateVerlauf(anzahl,db) {
-        // console.log("Anzahl hier"+this.anzahl);
 
           for (let i=(this.idStart+anzahl-1);i>=this.idStart; i-- ){
             console.log("ID"+i);
             try{
               let ausgabe=db.getById(i);
 
-              ausgabe.then(ergebnis => {
+                ausgabe.then(ergebnis => {
                 console.log(ergebnis);
                 let farbe="Darkgreen";
                 if((ergebnis["kalorienanzahl"])<ergebnis["kalorienbedarf"]*0.7 || (ergebnis["kalorienanzahl"])>ergebnis["kalorienbedarf"]*1.3){
-                farbe="Red";
+                  farbe="Red";
                 }
                 else if((ergebnis["kalorienanzahl"])<ergebnis["kalorienbedarf"]*0.8 || (ergebnis["kalorienanzahl"])>ergebnis["kalorienbedarf"]*1.2){
-                farbe="Orange";
+                  farbe="Orange";
                 }
                 else {
                   farbe="Darkgreen";
                 }
-                document.getElementById("daily_record").innerHTML += "<div class=\"row\"id=\"zeile\"><div class=\"column\"id=\"left_center\"><p id=\"datum5\">" + ergebnis["datum"] + "</p></div><div class=\"column\"id=\"left_center\"><p id=\"bezeichnung\">" + ergebnis["bezeichnung"] + "</p></div><div class=\"column\"id=\"farbe\" style=\"background-color:"+farbe+";\"><p id=\"ampel\"><b>"+ ergebnis["kalorienanzahl"] +"/"+ ergebnis["kalorienbedarf"]+" kcal</b></p></div></div>";
-              //document.getElementById("datum0").innerHTML =ergebnis["datum"];
-              //document.getElementById("bezeichnung0").innerHTML =ergebnis["bezeichnung"];
-              //document.getElementById("kalorien0").innerHTML =ergebnis["kalorienanzahl"];
+                document.getElementById("daily_record").innerHTML += "<div class=\"row\"id=\"zeile\"><div class=\"column\"id=\"left_center\"><p id=\"datum\">" + ergebnis["datum"] + "</p></div><div class=\"column\"id=\"left_center\"><p id=\"bezeichnung\">" + ergebnis["bezeichnung"] + "</p></div><div class=\"column\"id=\"farbe\" style=\"background-color:"+farbe+";\"><p id=\"ampel\"><b>"+ ergebnis["kalorienanzahl"] +"/"+ ergebnis["kalorienbedarf"]+" kcal</b></p></div></div>";
+
               }).catch(fehler => {
               //alert(fehler);
               });
             }catch(err){alert("fehler bei: "+i);}
           }
-
-
-          //console.log(ausgabe.toArray());
-          //console.log(ausgabe["datum"]);
-          //console.log(ausgabe["bezeichnung"]);
-          //console.log(ausgabe["kalorienanzahl"]);
-          let suche =db.search("1");
-          console.log(suche);
-
-
-
-            //document.getElementById("output").value =neu.target.value;
-            //document.getElementById("output").innerHTML =ev;
         }
 
 

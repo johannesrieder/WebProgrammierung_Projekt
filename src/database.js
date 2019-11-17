@@ -11,6 +11,7 @@ import Verlauf from "./verlauf/verlauf.js";
 //   * Vgl. http://dexie.org/docs/API-Reference
 let database = new Dexie("Verlauf");
 
+//Bei entsprechenden Fehlermeldungen zu Version 1 und 2 ändern
 database.version(2).stores({
     gericht: "++id, datum, bezeichnung, kalorienanzahl",
 });
@@ -43,16 +44,10 @@ class Gericht {
      */
 
     async saveNew(gericht,verlauf) {
-      /*
-      let verlaufO=new Verlauf();
-      let a=database.gericht.count().then(ergebnis => {
-        verlaufO.setAnzahl(ergebnis);
-        verlaufO.updateVerlauf(ergebnis, this);
-      });
-*/
+
        database.gericht.add(gericht);
-      //  return rückgabe;
     }
+
     aktualisiere(verlauf){
       let a=database.gericht.count().then(ergebnis => {
         verlauf.setAnzahl(ergebnis);
@@ -61,9 +56,9 @@ class Gericht {
 
     }
 
+    //wird nicht benutzt
     getAnzahl(){
       let a=database.gericht.count().then(anzahl => {
-
       });
       return a;
     }

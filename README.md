@@ -8,6 +8,14 @@ Im Verlauf wird für jeden Tag die erreichte Kalorienanzahl angezeigt und durch 
 
 Unsere Browserapp haben wir für den Google Chrome Webbrowser angepasst. Gelegentlich wurde beim Starten zunächst ein schwarzer Bildschirm angezeigt. Mit "STRG+Shift+Entf -> Bilder und Dateien im Cache löschen" lässt sich dies vermeiden.
 
+Anmerkung Datenbank(Dexie):
+Als Primärschlüssel wurde eine Id mit Autoincrement verwendet. Diese lässt sich leider nicht zurücksetzten. Auch nicht beim Löschen aller Datensatze durch "clear()". Werden die Datensätze durch clear gelöscht muss die Id (da sie nicht mitgelöscht wird) durch die Variable idStart (Zeile 18 verlauf.js) auf die Id des ersten neuen Datensatz gesetzt werden.
+
+ Bei folgendem Fehler: "Unhandled rejection: OpenFailedError: VersionError The requested version (20) is less than the existing version (30)" muss die Version des Datenbankschemas in Zeile 15 und 18 der database.js auf 1 und 2 gesetzt werden. Das kommt daher, dass je nach Contributer durch vorheriges Löschen anders eingestellt werden müssen (Version 1und2 bzw 2und2)
+
+
+
+
 Verwendete Technologien
 -----------------------
 
