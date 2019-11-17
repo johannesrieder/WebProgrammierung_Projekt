@@ -159,4 +159,16 @@ p{margin-bottom:.3em;}
   #dinner{
     margin-left: -15px;
   }
+  .transparentBox{
+      height: 20em;
+  }
+  #bSpeichereGericht {
+      margin-left: 1em;
+      margin-top: -4em;
+  }
+  #lKalorien{
+      margin-right: 1em;
+      width: 40%;
+      text-align: center;
+  }
 }
