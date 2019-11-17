@@ -159,11 +159,11 @@ export default class Nahrungsauswahl {
           break;
           case "lunch_g3":
           var gericht_bezeichnung = "Nudeln";
-          var gericht_kalorienanzahl = 600;
+          var gericht_kalorienanzahl = 800;
           break;
           case "lunch_g4":
           var gericht_bezeichnung = "Risotto";
-          var gericht_kalorienanzahl = 700;
+          var gericht_kalorienanzahl = 1000;
           break;
           default:
         }
@@ -195,14 +195,26 @@ export default class Nahrungsauswahl {
         }
         a_gericht_d = [gericht_bezeichnung, gericht_kalorienanzahl];
     }}
-    //console.log(a_nahrungsauswahl);
+
     console.log(a_gericht_b );
     console.log(a_gericht_l );
     console.log(a_gericht_d );
     let gericht = new Database.Gericht();
     let bez="";
     let kal="";
-    if(!a_gericht_b){
+    if (!a_gericht_b&&!a_gericht_l){
+      bez=a_gericht_d[0]+"("+a_gericht_d[1]+")";
+      kal=a_gericht_d[1];
+    }
+    else if(!a_gericht_b&&!a_gericht_d){
+      bez=a_gericht_l[0]+"("+a_gericht_l[1]+")";
+      kal=a_gericht_l[1];
+    }
+    else if(!a_gericht_l&&!a_gericht_d){
+      bez=a_gericht_b[0]+"("+a_gericht_b[1]+")";
+      kal=a_gericht_b[1];
+    }
+    else if(!a_gericht_b){
       bez=a_gericht_l[0]+"("+a_gericht_l[1]+"), "+a_gericht_d[0]+"("+a_gericht_d[1]+")";
       kal=a_gericht_l[1]+a_gericht_d[1];
     }
@@ -219,21 +231,24 @@ export default class Nahrungsauswahl {
       kal=a_gericht_b[1]+a_gericht_l[1]+a_gericht_d[1];
     }
 
+    var today = new Date();
+    var d = today.getDate();
+    var m = today.getMonth() + 1;
+    var y = today.getFullYear();
+
+    let datum = d+"."+m+"."+y;
+
     var kalorienbedarf = localStorage.getItem("kalorienanzahl");
-      console.log(kalorienbedarf);
 
 
-    let objekt={
-      datum: "18.11.2019",
+    let datensatz={
+      datum: datum,
       bezeichnung: bez,
       kalorienanzahl: kal,
       kalorienbedarf: kalorienbedarf,
     }
 
-
-  //  gericht.clear();
-    gericht.saveNew(objekt);
-    //localStorage.setItem("a_nahrungsauswahl", a_nahrungsauswahl);
+    gericht.saveNew(datensatz);
 
   }
 
