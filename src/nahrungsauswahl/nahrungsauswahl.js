@@ -200,10 +200,25 @@ export default class Nahrungsauswahl {
     console.log(a_gericht_l );
     console.log(a_gericht_d );
     let gericht = new Database.Gericht();
-    let bez=a_gericht_b[0]+"("+a_gericht_b[1]+"), "+a_gericht_l[0]+"("+a_gericht_l[1]+"), "+a_gericht_d[0]+"("+a_gericht_d[1]+")";
-    let kal=a_gericht_b[1]+a_gericht_l[1]+a_gericht_d[1];
-    console.log(bez);
-    console.log(kal);
+    let bez="";
+    let kal="";
+    if(!a_gericht_b){
+      bez=a_gericht_l[0]+"("+a_gericht_l[1]+"), "+a_gericht_d[0]+"("+a_gericht_d[1]+")";
+      kal=a_gericht_l[1]+a_gericht_d[1];
+    }
+    else if(!a_gericht_l){
+      bez=a_gericht_b[0]+"("+a_gericht_b[1]+"), "+a_gericht_d[0]+"("+a_gericht_d[1]+")";
+      kal=a_gericht_b[1]+a_gericht_d[1];
+    }
+    else if(!a_gericht_d){
+       bez=a_gericht_b[0]+"("+a_gericht_b[1]+"), "+a_gericht_l[0]+"("+a_gericht_l[1]+")";
+       kal=a_gericht_b[1]+a_gericht_l[1];
+    }
+    else {
+      bez=a_gericht_b[0]+"("+a_gericht_b[1]+"), "+a_gericht_l[0]+"("+a_gericht_l[1]+"), "+a_gericht_d[0]+"("+a_gericht_d[1]+")";
+      kal=a_gericht_b[1]+a_gericht_l[1]+a_gericht_d[1];
+    }
+
     var kalorienbedarf = localStorage.getItem("kalorienanzahl");
       console.log(kalorienbedarf);
 

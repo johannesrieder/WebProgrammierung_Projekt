@@ -59,7 +59,17 @@
 
               ausgabe.then(ergebnis => {
                 console.log(ergebnis);
-                document.getElementById("daily_record").innerHTML += "<div class=\"row\"id=\"zeile\"><div class=\"column\"id=\"left_center\"><p id=\"datum5\">" + ergebnis["datum"] + "</p></div><div class=\"column\"id=\"left_center\"><p id=\"kalorien0\"><b>"+ ergebnis["kalorienanzahl"] +"/"+ ergebnis["kalorienbedarf"]+" kcal</b></p><p id=\"bezeichnung0\">" + ergebnis["bezeichnung"] + "</p></div><div class=\"column\"id=\"farbe\"></div></div>";
+                let farbe="Darkgreen";
+                if((ergebnis["kalorienanzahl"]*2)<ergebnis["kalorienbedarf"]){
+                farbe="Red";
+                }
+                else if((ergebnis["kalorienanzahl"]*2)>ergebnis["kalorienbedarf"]&& (ergebnis["kalorienanzahl"])<ergebnis["kalorienbedarf"]){
+                farbe="Orange";
+                }
+                else {
+                  farbe="Darkgreen";
+                }
+                document.getElementById("daily_record").innerHTML += "<div class=\"row\"id=\"zeile\"><div class=\"column\"id=\"left_center\"><p id=\"datum5\">" + ergebnis["datum"] + "</p></div><div class=\"column\"id=\"left_center\"><p id=\"kalorien0\"><b>"+ ergebnis["kalorienanzahl"] +"/"+ ergebnis["kalorienbedarf"]+" kcal</b></p><p id=\"bezeichnung0\">" + ergebnis["bezeichnung"] + "</p></div><div class=\"column\"id=\"farbe\" style=\"background-color:"+farbe+";\"></div></div>";
               //document.getElementById("datum0").innerHTML =ergebnis["datum"];
               //document.getElementById("bezeichnung0").innerHTML =ergebnis["bezeichnung"];
               //document.getElementById("kalorien0").innerHTML =ergebnis["kalorienanzahl"];
