@@ -14,6 +14,9 @@ let database = new Dexie("Verlauf");
 database.version(2).stores({
     gericht: "++id, datum, bezeichnung, kalorienanzahl",
 });
+database.version(3).stores({
+    gericht: "++id, datum, bezeichnung, kalorienanzahl, kalorienbedarf",
+});
 
 /**
  * Datenbankzugriffsklasse für Tage. Diese Klasse bietet verschiedene
@@ -46,13 +49,8 @@ class Gericht {
         verlaufO.setAnzahl(ergebnis);
         verlaufO.updateVerlauf(ergebnis, this);
       });
-
-
 */
-      let ver=new Verlauf();
-      ver.overwrite(gericht,this);
-
-
+       database.gericht.add(gericht);
       //  return rückgabe;
     }
     aktualisiere(verlauf){
@@ -123,7 +121,8 @@ class Gericht {
             let kalorienanzahl = gericht.kalorienanzahl;
             let datum  = gericht.datum;
 			let bezeichnung = gericht.bezeichnung;
-            return datum.search(query) > -1 || kalorienanzahl.search(query) > -1 || bezeichnung.search(query) > -1;
+      let kalorienbedarf=gericht.kalorienbedarf;
+            return datum.search(query) > -1 || kalorienanzahl.search(query) > -1 || bezeichnung.search(query) > -1 || kalorienbedarf.search(query) > -1;
         });
 
         return result.toArray();

@@ -8,7 +8,8 @@ export default class Nahrungsauswahl {
 
   constructor(app) {
     this._app = app;
-    var kalorienanzahl = localStorage.getItem("kalorienanzahl");
+  //  var kalorienanzahl = localStorage.getItem("kalorienanzahl");
+  //  console.log(kalorienanzahl);
 
     let all_breakfast_g = document.getElementsByName("breakfast_g");
        this.a_gericht_b = all_breakfast_g.forEach(element => element.addEventListener('click', this.updateBreakfast));
@@ -113,7 +114,7 @@ export default class Nahrungsauswahl {
     }
   }
 */
-  saveNahrungsauswahl(a_nahrungsauswahl){
+  saveNahrungsauswahl(){
 
     ///Breakfast
     let a_gericht_b;
@@ -141,6 +142,7 @@ export default class Nahrungsauswahl {
         }
         a_gericht_b = [gericht_bezeichnung, gericht_kalorienanzahl];
       }}
+
     ///Lunch
     let a_gericht_l;
     var lunch = document.getElementsByName('lunch_g');
@@ -198,18 +200,26 @@ export default class Nahrungsauswahl {
     console.log(a_gericht_l );
     console.log(a_gericht_d );
     let gericht = new Database.Gericht();
+    let bez=a_gericht_b[0]+"("+a_gericht_b[1]+"), "+a_gericht_l[0]+"("+a_gericht_l[1]+"), "+a_gericht_d[0]+"("+a_gericht_d[1]+")";
+    let kal=a_gericht_b[1]+a_gericht_l[1]+a_gericht_d[1];
+    console.log(bez);
+    console.log(kal);
+    var kalorienbedarf = localStorage.getItem("kalorienanzahl");
+      console.log(kalorienbedarf);
+
 
     let objekt={
       datum: "18.11.2019",
-      bezeichnung: a_gericht_b[0],
-      kalorienanzahl: a_gericht_b[1],
+      bezeichnung: bez,
+      kalorienanzahl: kal,
+      kalorienbedarf: kalorienbedarf,
     }
 
 
   //  gericht.clear();
     gericht.saveNew(objekt);
     //localStorage.setItem("a_nahrungsauswahl", a_nahrungsauswahl);
-    return a_nahrungsauswahl;
+
   }
 
   onShow() {

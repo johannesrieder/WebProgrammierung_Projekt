@@ -39,7 +39,7 @@ class Eingabe {
           }
           document.getElementById("eingabe_ergebnisKB").innerHTML = Math.round(kalorienanzahl);
           //Stellt Kalorienbedarf anderen Seiten zur Verfügung
-          localStorage.setItem("kalorienanzahl", kalorienanzahl);
+          localStorage.setItem("kalorienanzahl", Math.round(kalorienanzahl));
       }
   }
       else {
