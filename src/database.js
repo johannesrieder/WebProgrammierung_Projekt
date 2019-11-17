@@ -39,16 +39,25 @@ class Gericht {
      * @return {Promise} Asynchrones Promise-Objekt
      */
 
-    async saveNew(gericht, verlauf) {
+    async saveNew(gericht,verlauf) {
+      /*
+      let verlaufO=new Verlauf();
+      let a=database.gericht.count().then(ergebnis => {
+        verlaufO.setAnzahl(ergebnis);
+        verlaufO.updateVerlauf(ergebnis, this);
+      });
+*/
+      let rückgabe=database.gericht.add(gericht);
+
+
+        return rückgabe;
+    }
+    aktualisiere(verlauf){
       let a=database.gericht.count().then(ergebnis => {
         verlauf.setAnzahl(ergebnis);
         verlauf.updateVerlauf(ergebnis, this);
       });
 
-      let rückgabe=database.gericht.add(gericht);
-
-
-        return rückgabe;
     }
 
     getAnzahl(){
