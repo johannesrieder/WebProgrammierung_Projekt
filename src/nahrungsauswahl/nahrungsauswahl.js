@@ -200,7 +200,7 @@ export default class Nahrungsauswahl {
     let gericht = new Database.Gericht();
 
     let objekt={
-      datum: "17.11.2019",
+      datum: "18.11.2019",
       bezeichnung: a_gericht_b[0],
       kalorienanzahl: a_gericht_b[1],
     }

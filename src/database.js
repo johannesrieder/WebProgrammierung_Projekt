@@ -11,7 +11,7 @@ import Verlauf from "./verlauf/verlauf.js";
 //   * Vgl. http://dexie.org/docs/API-Reference
 let database = new Dexie("Verlauf");
 
-database.version(1).stores({
+database.version(2).stores({
     gericht: "++id, datum, bezeichnung, kalorienanzahl",
 });
 
@@ -46,11 +46,14 @@ class Gericht {
         verlaufO.setAnzahl(ergebnis);
         verlaufO.updateVerlauf(ergebnis, this);
       });
+
+
 */
-      let rückgabe=database.gericht.add(gericht);
+      let ver=new Verlauf();
+      ver.overwrite(gericht,this);
 
 
-        return rückgabe;
+      //  return rückgabe;
     }
     aktualisiere(verlauf){
       let a=database.gericht.count().then(ergebnis => {
@@ -72,8 +75,11 @@ class Gericht {
      * @param  {Object}  gericht Zu speichernder Tag
      * @return {Promise} Asynchrones Promise-Objekt
      */
-    async update(gericht) {
-        return database.gericht.put(gericht);
+    async update(tag, gericht) {
+      tag["bezeichnung"]=(tag["bezeichnung"]+gericht["bezeichnung"]);
+      tag["kalorienanzahl"]=(tag["kalorienanzahl"]+gericht["kalorienanzahl"]);
+        console.log(tag);
+        return database.gericht.put(tag);
     }
 
     /**
@@ -116,8 +122,8 @@ class Gericht {
         let result = database.gericht.filter(gericht => {
             let kalorienanzahl = gericht.kalorienanzahl;
             let datum  = gericht.datum;
-			let gerichtt = gericht.bezeichnung;
-            return datum.search(query) > -1 || kalorienanzahl.search(query) > -1 || gericht.search(query) > -1;
+			let bezeichnung = gericht.bezeichnung;
+            return datum.search(query) > -1 || kalorienanzahl.search(query) > -1 || bezeichnung.search(query) > -1;
         });
 
         return result.toArray();
