@@ -36,7 +36,7 @@ export default class Nahrungsauswahl {
           var gericht_kalorienanzahl = 300;
           break;
           case "breakfast_g2":
-          var gericht_bezeichnung = "Wurst/Käsebrot";
+          var gericht_bezeichnung = "Brot";
           var gericht_kalorienanzahl = 500;
           break;
           case "breakfast_g3":
@@ -85,7 +85,7 @@ export default class Nahrungsauswahl {
       if (dinner[i].checked) {
         switch (dinner[i].value) {
           case "dinner_g1":
-          var gericht_bezeichnung = "Wurst/Käsebrot";
+          var gericht_bezeichnung = "Brot";
           var gericht_kalorienanzahl = 500;
           break;
           case "dinner_g2":
@@ -93,7 +93,7 @@ export default class Nahrungsauswahl {
           var gericht_kalorienanzahl = 900;
           break;
           case "dinner_g3":
-          var gericht_bezeichnung = "Lachsbrötchen";
+          var gericht_bezeichnung = "Lachsbrote";
           var gericht_kalorienanzahl = 700;
           break;
           case "dinner_g4":

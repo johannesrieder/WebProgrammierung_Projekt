@@ -60,10 +60,10 @@
               ausgabe.then(ergebnis => {
                 console.log(ergebnis);
                 let farbe="Darkgreen";
-                if((ergebnis["kalorienanzahl"]*2)<ergebnis["kalorienbedarf"]){
+                if((ergebnis["kalorienanzahl"])<ergebnis["kalorienbedarf"]*0.7 || (ergebnis["kalorienanzahl"])>ergebnis["kalorienbedarf"]*1.3){
                 farbe="Red";
                 }
-                else if((ergebnis["kalorienanzahl"]*2)>ergebnis["kalorienbedarf"]&& (ergebnis["kalorienanzahl"])<ergebnis["kalorienbedarf"]){
+                else if((ergebnis["kalorienanzahl"])<ergebnis["kalorienbedarf"]*0.8 || (ergebnis["kalorienanzahl"])>ergebnis["kalorienbedarf"]*1.2){
                 farbe="Orange";
                 }
                 else {

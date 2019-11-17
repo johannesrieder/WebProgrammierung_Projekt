@@ -34,7 +34,7 @@ UI-Skizzen und Screenshots
 <table style="max-width: 100%;">
     <tr>
         <td>
-            <img src="eimgabe.png" style="display: block; width: 100%;" />
+            <img src="eingabe.png" style="display: block; width: 100%;" />
         </td>
         <td>
             <img src="nahrungsauswahl.png" style="display: block; width: 100%;" />
