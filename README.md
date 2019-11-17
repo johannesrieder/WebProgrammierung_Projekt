@@ -3,14 +3,10 @@ Anwendung "Ernährungsplan"
 
 Kurzbeschreibung
 ----------------
-Unser Browserapp "Ernährungsplan" ermittelt den individuellen Kalorienbedarf un bietet verschiedene Gerichte zu Frühstück, Mittag und Abendessen an. Der Benuter kann sich  entsprechend seinem Kalorienbedarf ein Frühstück, Mittagessen und Abendessen zusammenstellen. Am Ende des Tages kann er seine Malzeiten durch einen Klick auf das jeweilige Bild auswählen und durch Betätigen des Button "Deine heutige Gerichtsauswahl abspeichern" im Verlauf ablegen.
-Im Verlauf wird auch für jeden Tag die erreichte Kalorienanzahl angezeigt und durch ein Ampelsystem bewertet. Zum Beispiel bedeutet grün, dass die erreichte Kalorienanzahl in der nähe des Kalorienbedarfs liegt.
+Unsere Browserapp "Ernährungsplan" ermittelt den individuellen Kalorienbedarf und bietet verschiedene Gerichte zu Frühstück, Mittag und Abendessen an. Der Benutzer kann sich  entsprechend seines Kalorienbedarfs ein Frühstück, Mittagessen und Abendessen zusammenstellen. Am Ende des Tages kann er seine Malzeiten durch einen Klick auf das jeweilige Bild auswählen und durch Betätigen des Buttons "Deine heutige Gerichtsauswahl abspeichern" im Verlauf ablegen.
+Im Verlauf wird für jeden Tag die erreichte Kalorienanzahl angezeigt und durch ein Ampelsystem bewertet. Zum Beispiel bedeutet grün, dass die erreichte Kalorienanzahl in der Nähe des Kalorienbedarfs liegt.
 
-Unser Webentwicklung haben wir für den Google Chrome Webbrowser angepasst. Gelegentlich wurde beim Starten zunächst ein schwarzer Bildschirm angezeigt. Mit "STRG+Shift+Entf -> Bilder und Dateien im Cache löschen" lässt sich dies vermeinden.
-
-Die Anwendung verwendet die Dexie Datenbank. Hier sind eventuell noch folgende Packete zu installieren:
-npm add --save-dev dexie
-npm add --save-dev babel-plugin-transform-runtime
+Unsere Webentwicklung haben wir für den Google Chrome Webbrowser angepasst. Gelegentlich wurde beim Starten zunächst ein schwarzer Bildschirm angezeigt. Mit "STRG+Shift+Entf -> Bilder und Dateien im Cache löschen" lässt sich dies vermeiden.
 
 Verwendete Technologien
 -----------------------
@@ -31,9 +27,7 @@ Folgende Entwicklungswerkzeuge kommen stattdessen zum Einsatz:
 Zusätzlich werden folgende Bibliotheken genutzt:
 
  * [Navigo:](https://github.com/krasimir/navigo) Single Page Router zur Vereinfachung der Navigation innerhalb der App
- * [PouchDB:](https://pouchdb.com/") Clientseitige NoSQL-Datenbank zum Speichern der Songtexte
- * [lyric-get:](https://github.com/rhnvrm/lyric-api") Kleine Bibliothek zur Suche von Songtexten im Internet
- * [Quill:](https://quilljs.com/") WYSIWYG-Editor zum Nachbearbeiten der Songtexte
+ * [Dexie:](https://pouchdb.com/") Datenbank zum Speichern der konsumierten Mahlzeiten und des Kalorienbedarfs
 
 UI-Skizzen und Screenshots
 --------------------------
@@ -41,13 +35,13 @@ UI-Skizzen und Screenshots
 <table style="max-width: 100%;">
     <tr>
         <td>
-            <img src="eingabe.png" style="display: block; width: 100%;" />
+            <img src="Eingabe.png" style="display: block; width: 100%;" />
         </td>
         <td>
-            <img src="nahrungsauswahl.png" style="display: block; width: 100%;" />
+            <img src="Nahrungsauswahl.png" style="display: block; width: 100%;" />
         </td>
         <td>
-            <img src="verlauf.png" style="display: block; width: 100%;" />
+            <img src="Verlauf.png" style="display: block; width: 100%;" />
         </td>
     </tr>
     <tr>
