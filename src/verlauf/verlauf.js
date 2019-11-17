@@ -13,7 +13,7 @@
         constructor(app) {
 
             this._app = app;
-            this.idStart=1;
+            this.idStart=67;
             this.anzahl=0;
 
             let gericht = new Database.Gericht();

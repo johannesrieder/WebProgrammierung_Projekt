@@ -21,7 +21,8 @@ import Database from "database.js"
         this._title = "Ernährungsplan";
         this._currentView = null;
 
-        this._router = new Navigo(null, true);
+        this._router = new Navigo('http://localhost:1234/', false);
+      //  this._router = new Navigo(null, true);
         this._currentUrl = "";
 		    this._navAborted = false;
 
@@ -49,7 +50,7 @@ import Database from "database.js"
             }
         });
 
-      
+
     }
         /**
          * Ab hier beginnt die Anwendung zu laufen.

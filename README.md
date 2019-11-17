@@ -3,7 +3,14 @@ Anwendung "Ernährungsplan"
 
 Kurzbeschreibung
 ----------------
+Unser Browserapp "Ernährungsplan" ermittelt den individuellen Kalorienbedarf un bietet verschiedene Gerichte zu Frühstück, Mittag und Abendessen an. Der Benuter kann sich  entsprechend seinem Kalorienbedarf ein Frühstück, Mittagessen und Abendessen zusammenstellen. Am Ende des Tages kann er seine Malzeiten durch einen Klick auf das jeweilige Bild auswählen und durch Betätigen des Button "Deine heutige Gerichtsauswahl abspeichern" im Verlauf ablegen.
+Im Verlauf wird auch für jeden Tag die erreichte Kalorienanzahl angezeigt und durch ein Ampelsystem bewertet. Zum Beispiel bedeutet grün, dass die erreichte Kalorienanzahl in der nähe des Kalorienbedarfs liegt.
 
+Unser Webentwicklung haben wir für den Google Chrome Webbrowser angepasst. Gelegentlich wurde beim Starten zunächst ein schwarzer Bildschirm angezeigt. Mit "STRG+Shift+Entf -> Bilder und Dateien im Cache löschen" lässt sich dies vermeinden.
+
+Die Anwendung verwendet die Dexie Datenbank. Hier sind eventuell noch folgende Packete zu installieren:
+npm add --save-dev dexie
+npm add --save-dev babel-plugin-transform-runtime
 
 Verwendete Technologien
 -----------------------
