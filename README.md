@@ -6,16 +6,14 @@ Kurzbeschreibung
 Unsere Browserapp "Ernährungsplan" ermittelt den individuellen Kalorienbedarf und bietet verschiedene Gerichte zu Frühstück, Mittag und Abendessen an. Der Benutzer kann sich  entsprechend seines Kalorienbedarfs ein Frühstück, Mittagessen und Abendessen zusammenstellen. Am Ende des Tages kann er seine Malzeiten durch einen Klick auf das jeweilige Bild auswählen und durch Betätigen des Buttons "Deine heutige Gerichtsauswahl abspeichern" im Verlauf ablegen.
 Im Verlauf wird für jeden Tag die erreichte Kalorienanzahl angezeigt und durch ein Ampelsystem bewertet. Zum Beispiel bedeutet grün, dass die erreichte Kalorienanzahl in der Nähe des Kalorienbedarfs liegt.
 
-Unsere Webentwicklung haben wir für den Google Chrome Webbrowser angepasst. Gelegentlich wurde beim Starten zunächst ein schwarzer Bildschirm angezeigt. Mit "STRG+Shift+Entf -> Bilder und Dateien im Cache löschen" lässt sich dies vermeiden.
+Unsere Browserapp haben wir für den Google Chrome Webbrowser angepasst. Gelegentlich wurde beim Starten zunächst ein schwarzer Bildschirm angezeigt. Mit "STRG+Shift+Entf -> Bilder und Dateien im Cache löschen" lässt sich dies vermeiden.
 
 Verwendete Technologien
 -----------------------
 
 Die App nutzt den Node Package Manager npm als Paketverwaltung. Auf diese
 Weise werden der Application Bundler ParcelJS sowie eine Hand voll externe
-Bibliotheken für die Anwendung installiert. Jedoch wird kein übergreifendes
-Framework wie Angular oder React verwendet, da diese für eine allgemeine
-Einführung zu speziell sind und viele wesentliche Details verbergen.
+Bibliotheken für die Anwendung installiert.
 
 Folgende Entwicklungswerkzeuge kommen stattdessen zum Einsatz:
 
@@ -27,7 +25,8 @@ Folgende Entwicklungswerkzeuge kommen stattdessen zum Einsatz:
 Zusätzlich werden folgende Bibliotheken genutzt:
 
  * [Navigo:](https://github.com/krasimir/navigo) Single Page Router zur Vereinfachung der Navigation innerhalb der App
- * [Dexie:](https://pouchdb.com/") Datenbank zum Speichern der konsumierten Mahlzeiten und des Kalorienbedarfs
+ * [Dexie:](https://dexie.org) Datenbank zum Speichern der konsumierten Mahlzeiten und des Kalorienbedarfs
+ * [Bootstrap:](https://getbootstrap.com/) Bootstrap ist ein freies Frontend-CSS-Framework
 
 UI-Skizzen und Screenshots
 --------------------------
