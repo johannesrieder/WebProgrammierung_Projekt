@@ -13,7 +13,7 @@
         constructor(app) {
 
             this._app = app;
-            this.idStart=67;
+            this.idStart=1;
             this.anzahl=0;
 
             let gericht = new Database.Gericht();
@@ -69,7 +69,7 @@
                 else {
                   farbe="Darkgreen";
                 }
-                document.getElementById("daily_record").innerHTML += "<div class=\"row\"id=\"zeile\"><div class=\"column\"id=\"left_center\"><p id=\"datum5\">" + ergebnis["datum"] + "</p></div><div class=\"column\"id=\"left_center\"><p id=\"kalorien0\"><b>"+ ergebnis["kalorienanzahl"] +"/"+ ergebnis["kalorienbedarf"]+" kcal</b></p><p id=\"bezeichnung0\">" + ergebnis["bezeichnung"] + "</p></div><div class=\"column\"id=\"farbe\" style=\"background-color:"+farbe+";\"></div></div>";
+                document.getElementById("daily_record").innerHTML += "<div class=\"row\"id=\"zeile\"><div class=\"column\"id=\"left_center\"><p id=\"datum5\">" + ergebnis["datum"] + "</p></div><div class=\"column\"id=\"left_center\"><p id=\"bezeichnung\">" + ergebnis["bezeichnung"] + "</p></div><div class=\"column\"id=\"farbe\" style=\"background-color:"+farbe+";\"><p id=\"ampel\"><b>"+ ergebnis["kalorienanzahl"] +"/"+ ergebnis["kalorienbedarf"]+" kcal</b></p></div></div>";
               //document.getElementById("datum0").innerHTML =ergebnis["datum"];
               //document.getElementById("bezeichnung0").innerHTML =ergebnis["bezeichnung"];
               //document.getElementById("kalorien0").innerHTML =ergebnis["kalorienanzahl"];

@@ -31,8 +31,18 @@ margin-bottom: auto;
 }
 
 #farbe{
+height: 80px;
 background-color: Darkgreen;
+text-align: center;
 width: 33.33333333%;
+}
+#ampel{
+margin-top: 30px;
+margin-bottom: 30px;
+}
+#bezeichnung{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #zeile{

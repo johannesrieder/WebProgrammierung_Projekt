@@ -202,7 +202,12 @@ export default class Nahrungsauswahl {
     let gericht = new Database.Gericht();
     let bez="";
     let kal="";
-    if (!a_gericht_b&&!a_gericht_l){
+
+    if(!a_gericht_b&&!a_gericht_l&&a__gericht_d){
+
+      return false;
+    }
+    else if (!a_gericht_b&&!a_gericht_l){
       bez=a_gericht_d[0]+"("+a_gericht_d[1]+")";
       kal=a_gericht_d[1];
     }
@@ -249,7 +254,7 @@ export default class Nahrungsauswahl {
     }
 
     gericht.saveNew(datensatz);
-
+    return true;
   }
 
   onShow() {
