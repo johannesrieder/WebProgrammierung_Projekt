@@ -57,7 +57,7 @@ h1 {
 }
 
 .grid input{
-  width: 50%;
+  width: 100%;
   margin:0;padding:0;
   -webkit-appearance:none;
   -moz-appearance:none;
@@ -70,9 +70,10 @@ h1 {
   background-repeat:no-repeat;
   transition: all 100ms ease-in;
   border: 0px;
-    width: 100%;
-    height: 4em;
+  width: 100%;
+  height: 4em;
 }
+
 .radio:hover{
   filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
@@ -87,16 +88,19 @@ a:visited{color:#888}
 a{color:#444;text-decoration:none;}
 p{margin-bottom:.3em;}
 
+#t_gericht{
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+}
 .breakfast_g1{background-image:url("breakfast_g1.jpg");}
 .breakfast_g2{background-image:url("breakfast_g2.jpg");}
 .breakfast_g3{background-image:url("breakfast_g3.jpg");}
 .breakfast_g4{background-image:url("breakfast_g4.jpg");}
-
 .lunch_g1{background-image:url("lunch_g1.jpg");}
 .lunch_g2{background-image:url("lunch_g2.jpg");}
 .lunch_g3{background-image:url("lunch_g3.jpg");}
 .lunch_g4{background-image:url("lunch_g4.jpg");}
-
 .dinner_g1{background-image:url("breakfast_g2.jpg");}
 .dinner_g2{background-image:url("dinner_g2.jpg");}
 .dinner_g3{background-image:url("dinner_g3.jpg");}
@@ -144,7 +148,7 @@ p{margin-bottom:.3em;}
 }
 
 ::-webkit-scrollbar {
-    display: block;
+  display: block;
 }
 
 @media (max-width: 767px) {
@@ -160,16 +164,15 @@ p{margin-bottom:.3em;}
     margin-left: -15px;
   }
   .transparentBox{
-      height: 20em;
+    height: 20em;
   }
   #bSpeichereGericht {
-      margin-left: 7.5%;
-      margin-top: -40%;
+    margin-left: 7.5%;
+    margin-top: -40%;
   }
   #lKalorien{
-      margin-left: 55%;
-      width: 40%;
-      margin-top: -40%;
-      text-align: center;
+    margin-left: 55%;
+    width: 40%;
+    margin-top: -40%;
   }
 }

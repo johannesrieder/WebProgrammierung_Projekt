@@ -10,7 +10,7 @@ export default class Nahrungsauswahl {
     this._app = app;
   //  var kalorienanzahl = localStorage.getItem("kalorienanzahl");
   //  console.log(kalorienanzahl);
-
+    document.getElementById("lKalorien").innerHTML = localStorage.getItem("kalorienanzahl")+" kcal";
     let all_breakfast_g = document.getElementsByName("breakfast_g");
        this.a_gericht_b = all_breakfast_g.forEach(element => element.addEventListener('click', this.updateBreakfast));
     let all_lunch_g = document.getElementsByName("lunch_g");
