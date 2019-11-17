@@ -1,6 +1,8 @@
 "use strict";
 
 import stylesheet from "./index.css";
+import "babel-core/register";
+import "babel-polyfill";
 
 import App from "./app.js";
 
