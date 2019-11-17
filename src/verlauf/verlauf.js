@@ -20,7 +20,7 @@
 
             let objekt={
               datum: "15.11.2019",
-              bezeichnung: "Lachs",
+              bezeichnung: "Lahchs",
               kalorienanzahl: "1000",
             }
           //  gericht.clear();

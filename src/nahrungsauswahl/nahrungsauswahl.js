@@ -31,7 +31,7 @@ export default class Nahrungsauswahl {
           var gericht_kalorienanzahl = 300;
           break;
           case "breakfast_g2":
-          var gericht_bezeichnung = "Brot";
+          var gericht_bezeichnung = "Wurst/Käsebrot";
           var gericht_kalorienanzahl = 500;
           break;
           case "breakfast_g3":
@@ -39,7 +39,7 @@ export default class Nahrungsauswahl {
           var gericht_kalorienanzahl = 600;
           break;
           case "breakfast_g4":
-          var gericht_bezeichnung = "Wurst";
+          var gericht_bezeichnung = "Omelette";
           var gericht_kalorienanzahl = 700;
           break;
           default:
@@ -87,20 +87,20 @@ export default class Nahrungsauswahl {
       if (dinner[i].checked) {
         switch (dinner[i].value) {
           case "dinner_g1":
-          var gericht_bezeichnung = "Wurst";
+          var gericht_bezeichnung = "Wurst/Käsebrot";
           var gericht_kalorienanzahl = 500;
           break;
           case "dinner_g2":
-          var gericht_bezeichnung = "Käse";
-          var gericht_kalorienanzahl = 600;
+          var gericht_bezeichnung = "Pizza";
+          var gericht_kalorienanzahl = 900;
           break;
           case "dinner_g3":
-          var gericht_bezeichnung = "Gemüse";
-          var gericht_kalorienanzahl = 300;
+          var gericht_bezeichnung = "Lachsbrötchen";
+          var gericht_kalorienanzahl = 700;
           break;
           case "dinner_g4":
-          var gericht_bezeichnung = "Brot";
-          var gericht_kalorienanzahl = 400;
+          var gericht_bezeichnung = "Nudeln";
+          var gericht_kalorienanzahl = 600;
           break;
           default:
         }

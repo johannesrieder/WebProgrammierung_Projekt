@@ -11,7 +11,7 @@ import Verlauf from "./verlauf/verlauf.js";
 //   * Vgl. http://dexie.org/docs/API-Reference
 let database = new Dexie("Verlauf");
 
-database.version(2).stores({
+database.version(1).stores({
     gericht: "++id, datum, bezeichnung, kalorienanzahl",
 });
 
