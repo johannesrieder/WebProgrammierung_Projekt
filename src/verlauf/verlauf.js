@@ -19,8 +19,8 @@
             this.anzahl=0;
 
             let gericht = new Database.Gericht();
-
           gericht.aktualisiere(this); //Beim Wechsel auf die Seite Verlauf wird der Verlauf aktualisiert
+
         }
 
         //Ändert this.anzahl nicht - methode wird nciht benutzt
@@ -50,7 +50,7 @@
                   farbe="Darkgreen";
                 }
                 document.getElementById("daily_record").innerHTML += "<div class=\"row\"id=\"zeile\"><div class=\"column\"id=\"left_center\"><p id=\"datum\">" + ergebnis["datum"] + "</p></div><div class=\"column\"id=\"left_center\"><p id=\"bezeichnung\">" + ergebnis["bezeichnung"] + "</p></div><div class=\"column\"id=\"farbe\" style=\"background-color:"+farbe+";\"><p id=\"ampel\"><b>"+ ergebnis["kalorienanzahl"] +"/"+ ergebnis["kalorienbedarf"]+" kcal</b></p></div></div>";
-
+                console.log(ergebnis);
               }).catch(fehler => {
               //alert(fehler);
               });
