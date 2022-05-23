@@ -31,7 +31,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "dexie": "^2.0.4",
+    "dexie": "^3.2.2",
     "navigo": "^7.1.2",
     "parcel-bundler": "^1.12.4",
     "shelljs": "^0.8.3",
